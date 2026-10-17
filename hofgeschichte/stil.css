@@ -1,0 +1,150 @@
+:root{
+  --kalk:#FBFAF7; --holz:#EBD9BC; --holz-tief:#B88A55; --fassade:#2E3430; --dotter:#E39A2A; --text:#25221E; --leise:#6A6259; --linie:#E4DDD0;
+  --serif:"Instrument Serif", Georgia, serif; --sans:"Manrope", system-ui, sans-serif;
+  --st-flaeche:#fff; --st-rand:var(--linie); --st-radius:4px; --st-leise:var(--leise); --st-text:var(--text); --st-karte:#F2EBDF; --st-knopf:var(--fassade);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section{scroll-margin-top:72px}
+body{margin:0;background:var(--kalk);color:var(--text);font:400 1.05rem/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--dotter);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:#fff;padding:8px 12px;z-index:99}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;margin:0;color:var(--text)}
+h2{font-size:clamp(2.6rem,5.4vw,4.4rem);max-width:15ch}
+h3{font-size:1.8rem}
+em{font-style:italic}
+p{margin:0 0 1em;max-width:58ch}
+.kapitel{font-size:.95rem;font-weight:700;color:var(--holz-tief);margin:0 0 14px}
+.knopf{display:inline-block;padding:14px 26px;border-radius:999px;background:var(--fassade);color:#fff;text-decoration:none;font-weight:700;font-size:.98rem}
+.knopf:hover{background:#000}
+.knopf.rand{background:transparent;color:var(--fassade);box-shadow:inset 0 0 0 2px var(--fassade)}
+.knopf.rand:hover{background:var(--fassade);color:#fff}
+.knoepfe{display:flex;gap:12px;flex-wrap:wrap}
+
+.kopf{border-bottom:1px solid var(--linie);background:var(--kalk);position:sticky;top:0;z-index:20}
+.kopf .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.marke{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--serif);font-size:1.6rem;line-height:1}
+.marke img{width:44px}
+.nav{display:flex;gap:28px;font-weight:500;font-size:.95rem}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--holz-tief)}
+.nav a[aria-current=page]{color:var(--holz-tief);text-decoration:underline;text-underline-offset:6px}
+.menue{display:none;background:none;border:2px solid var(--fassade);border-radius:999px;padding:7px 14px;font:700 .9rem var(--sans)}
+
+/* Hero */
+.hero{padding:56px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(3rem,6.8vw,6rem);letter-spacing:-.01em}
+.hero h1 em{color:var(--holz-tief)}
+.hero .lead{font-size:1.2rem;color:var(--leise);margin:26px 0 30px;max-width:42ch}
+.collage{display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:1fr 1fr;gap:14px;height:min(640px,72vh)}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:4px}
+.collage img:first-child{grid-row:span 2}
+.hinweis-eroeffnung{display:flex;gap:14px;align-items:center;margin-top:34px;padding:16px 18px;background:#fff;border:1px solid var(--linie);border-left:4px solid var(--dotter);max-width:460px}
+.hinweis-eroeffnung b{font-family:var(--serif);font-weight:400;font-size:2.2rem;line-height:1;color:var(--dotter)}
+.hinweis-eroeffnung span{font-size:.95rem}
+.seitenkopf{padding:72px 0 40px}
+.seitenkopf h1{font-size:clamp(3rem,6vw,5.2rem);max-width:14ch}
+.seitenkopf p{font-size:1.2rem;color:var(--leise);margin-top:22px;max-width:48ch}
+
+/* Blöcke */
+.block{padding:100px 0;border-top:1px solid var(--linie)}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.zwei.umgekehrt>:first-child{order:2}
+.bildpaar{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bildpaar img{aspect-ratio:4/5;object-fit:cover;width:100%;border-radius:4px}
+.bildpaar img:nth-child(2){margin-top:56px}
+.liste{list-style:none;padding:0;margin:20px 0 0;columns:2;gap:28px}
+.liste li{padding:8px 0;border-bottom:1px solid var(--linie);break-inside:avoid}
+
+/* Eröffnung */
+.eroeffnung{background:var(--holz);padding:96px 0}
+.eroeffnung .wrap{display:grid;grid-template-columns:auto 1fr 1fr;gap:56px;align-items:start}
+.eroeffnung img.logo{width:200px}
+.eroeffnung dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 22px}
+.eroeffnung dt{font-weight:700}
+.eroeffnung dd{margin:0}
+
+/* Teaser */
+.teaser{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.teaser a{text-decoration:none;display:block}
+.teaser img{aspect-ratio:16/10;object-fit:cover;width:100%;border-radius:4px}
+.teaser h3{font-size:2.4rem;margin-top:18px}
+.teaser p{color:var(--leise);margin:8px 0 10px}
+.teaser .mehr{font-weight:700;color:var(--holz-tief)}
+.teaser a:hover h3{color:var(--holz-tief)}
+
+/* Finder */
+.finder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px}
+.ort{display:flex;flex-direction:column}
+.ort-bild{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:4px}
+.ort-text{padding-top:14px;display:flex;flex-direction:column;flex:1;border-bottom:1px solid var(--linie);padding-bottom:16px}
+.ort-status{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;margin:0 0 4px;color:var(--leise)}
+.ort.ist-offen .ort-status{color:#3E7A2B}
+.punkt{width:9px;height:9px;border-radius:50%;background:#CDBFA9;flex:none}
+.punkt.offen{background:#4F9A35;box-shadow:0 0 0 4px rgba(79,154,53,.16)}
+.ort-name,.station-name{font-size:1.75rem}
+.station-name{font-size:2.2rem}
+.ort.hervor .ort-name{color:var(--holz-tief)}
+.ort-adresse{color:var(--leise);font-size:.93rem;margin:2px 0 8px}
+.ort-zeiten{font-size:.93rem;margin:auto 0 0}
+.station-route{color:var(--holz-tief)}
+.woche{margin-top:56px;overflow-x:auto}
+.woche table{border-collapse:collapse;width:100%;min-width:760px;font-size:.9rem}
+.woche caption{text-align:left;font-family:var(--serif);font-size:1.8rem;padding-bottom:12px}
+.woche th,.woche td{padding:12px 8px;text-align:center;border-bottom:1px solid var(--linie);font-weight:500}
+.woche th[scope=row]{text-align:left}
+.woche thead th{color:var(--leise);font-weight:700}
+.woche .heute{background:#F5EDDF}
+.woche thead th.heute{color:var(--text)}
+.woche small{display:block;line-height:1.35}
+.ei-mark{display:inline-block;width:10px;height:13px;border-radius:50%/60% 60% 40% 40%;background:var(--holz-tief);margin-bottom:3px}
+.zu{color:#CDBFA9}
+
+/* Chronik */
+.bau{background:var(--fassade);color:#E7E5DE;padding:90px 0 110px}
+.chronik{list-style:none;margin:0;padding:0}
+.eintrag{display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start;padding:40px 0;border-top:1px solid #4A524D}
+.eintrag-text{display:grid;grid-template-columns:200px 1fr;column-gap:36px;align-content:start}
+.eintrag .wann{grid-row:span 2;font-family:var(--serif);font-size:2rem;line-height:1.05;color:var(--dotter);margin:0}
+.eintrag-text h3{color:#fff;font-size:2.4rem;margin-bottom:12px}
+.eintrag-text p:last-child{margin:0;color:#C9CBC2}
+.eintrag .bogen,.eintrag .ohne-bild{aspect-ratio:4/3;border-radius:4px;overflow:hidden}
+.eintrag .bogen img{width:100%;height:100%;object-fit:cover}
+.eintrag .ohne-bild{display:grid;place-items:center;border:1px solid #4A524D}
+.eintrag .ohne-bild svg{width:96px;stroke:var(--holz);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.eintrag.ziel h3{color:var(--dotter);font-size:3.2rem}
+
+.kontakt{padding:100px 0;border-top:1px solid var(--linie)}
+.kontakt .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
+.kontakt a.gross{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);text-decoration:none;display:block;line-height:1.15}
+.kontakt a.gross:hover{color:var(--holz-tief)}
+.fuss{background:var(--fassade);color:#A9ADA5;font-size:.9rem;padding:40px 0 60px}
+.fuss .wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.fuss b{color:#fff}
+.entwurf{position:fixed;left:16px;bottom:16px;z-index:30;background:var(--fassade);color:#fff;font-size:.8rem;padding:6px 12px;border-radius:999px;text-decoration:none}
+
+@media (max-width:900px){
+  .nav{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:18px;background:var(--kalk);padding:24px 28px;border-bottom:1px solid var(--linie)}
+  .nav.auf{display:flex}
+  .menue{display:block}
+  .hero .wrap,.zwei,.kontakt .wrap,.fuss .wrap,.teaser{grid-template-columns:1fr}
+  .zwei.umgekehrt>:first-child{order:0}
+  .collage{height:420px}
+  .eroeffnung .wrap{grid-template-columns:1fr;gap:28px}
+  .block,.eroeffnung,.kontakt,.bau{padding:64px 0}
+  .eintrag{grid-template-columns:1fr;gap:10px;padding:32px 0}
+  .eintrag-text{display:block}
+  .eintrag .wann{margin-bottom:8px}
+  .eintrag .bogen,.eintrag .ohne-bild{margin-top:12px}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  .collage{height:340px}
+  .marke span{font-size:1.3rem}
+  .liste{columns:1}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website-Entwürfe Hühnerhof Schneider</title>
+<meta name="description" content="Drei Entwürfe für die neue Website von Hühnerhof Schneider und Schneiders Hofladen & Hofcafé in Deckenpfronn.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="bilder/emblem-schneiders.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Jost:wght@300;400&family=Barlow+Condensed:wght@800&family=Instrument+Serif&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--grund:#F6F4EF;--text:#24221F;--leise:#6B665E;--linie:#E2DED5}
+*{box-sizing:border-box}
+body{margin:0;background:var(--grund);color:var(--text);font:400 1.02rem/1.6 "Manrope",system-ui,sans-serif}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{padding:64px 0 40px}
+header img{width:120px;margin-bottom:22px}
+h1{font:400 clamp(2.4rem,5vw,3.8rem)/1.05 "Instrument Serif",Georgia,serif;margin:0;max-width:20ch}
+header p{color:var(--leise);max-width:62ch;margin:18px 0 0;font-size:1.1rem}
+.liste{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-bottom:40px}
+.karte{display:flex;flex-direction:column;text-decoration:none;color:inherit;border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--linie);transition:transform .15s,box-shadow .15s}
+.karte:hover{transform:translateY(-3px);box-shadow:0 18px 30px -18px rgba(0,0,0,.35)}
+.karte:focus-visible{outline:3px solid #E39A2A;outline-offset:3px}
+.bild{position:relative;aspect-ratio:4/3;overflow:hidden}
+.bild img{width:100%;height:100%;object-fit:cover}
+.probe{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,.65))}
+.inhalt{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.inhalt h2{margin:0;font:700 1.25rem/1.2 "Manrope",sans-serif}
+.inhalt p{margin:0;color:var(--leise)}
+.farben{display:flex;gap:6px;margin-top:auto;padding-top:10px}
+.farben span{width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.08)}
+.los{font-weight:700;margin-top:6px}
+/* Schriftproben der Varianten */
+.v1 .bild{background:#F3EFE6}
+.v1 .probe{background:none;color:#6F6254;text-align:center;top:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.v1 .probe img{width:46%;margin-bottom:10px}
+.v1 .probe b{font:300 1.6rem "Jost",sans-serif;letter-spacing:.24em;text-transform:uppercase}
+.v1 .probe i{font:400 1.8rem "Allura",cursive;font-style:normal}
+.v2 .probe b{font:800 2.2rem/0.95 "Barlow Condensed",sans-serif;text-transform:uppercase;display:block}
+.v3 .probe b{font:400 2.1rem/1 "Instrument Serif",serif;display:block}
+.alt{border-top:1px solid var(--linie);padding:28px 0 64px;color:var(--leise)}
+.alt a{color:var(--text)}
+@media (max-width:900px){.liste{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.wrap{padding:0 16px}.liste{grid-template-columns:1fr}header{padding:40px 0 28px}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <img src="bilder/logo-schneiders.png" alt="Schneiders Hofladen & Hofcafé" width="700" height="436">
+  <h1>Drei Entwürfe für die neue Website</h1>
+  <p>Für Hühnerhof Schneider und Schneiders Hofladen &amp; Hofcafé in Deckenpfronn. Alle drei haben denselben Aufbau: Auf der Startseite stehen Hofladen und Hofcafé. Hofbus und Wochenmärkte bekommen eine eigene Seite mit Zeiten und Karte zu jeder Station, die Geschichte ein eigenes Kapitel. Die Fotos stammen vom Instagram-Kanal. Am besten auch auf dem Handy anschauen.</p>
+</header>
+
+<main class="wrap">
+  <div class="liste">
+    <a class="karte v1" href="eroeffnung/">
+      <div class="bild">
+        <div class="probe"><img src="bilder/logo-schneiders.png" alt=""><b>Eröffnung</b><i>Wir freuen uns auf euch!</i></div>
+      </div>
+      <div class="inhalt">
+        <h2>1. Eröffnung</h2>
+        <p>Im Stil der neuen Posts und des Eröffnungsplakats: ruhig, hell, mit dem neuen Schneiders-Logo und Fotos in Rundbögen.</p>
+        <div class="farben" aria-hidden="true"><span style="background:#F3EFE6"></span><span style="background:#6F6254"></span><span style="background:#857F6B"></span><span style="background:#FFFDF8"></span></div>
+        <span class="los">Entwurf ansehen</span>
+      </div>
+    </a>
+    <a class="karte v2" href="hofbus/">
+      <div class="bild">
+        <img src="bilder/neubau-aussen.jpg" alt="" loading="lazy">
+        <div class="probe"><b>Hofladen &amp; Hofcafé direkt am Hof.</b></div>
+      </div>
+      <div class="inhalt">
+        <h2>2. Kräftig</h2>
+        <p>Fotografisch und laut, im Grün des Hühnerhof-Logos. Große Bilder, große Schrift und die Hofbus-Tour als Routenlinie.</p>
+        <div class="farben" aria-hidden="true"><span style="background:#6E7F2A"></span><span style="background:#F2C14E"></span><span style="background:#1E2312"></span><span style="background:#F7F6F0"></span></div>
+        <span class="los">Entwurf ansehen</span>
+      </div>
+    </a>
+    <a class="karte v3" href="hofgeschichte/">
+      <div class="bild">
+        <img src="bilder/schindel-detail.jpg" alt="" loading="lazy">
+        <div class="probe"><b>Unser Hofladen. Mit Café. Direkt am Hühnerhof.</b></div>
+      </div>
+      <div class="inhalt">
+        <h2>3. Erzählend</h2>
+        <p>Ruhig erzählt wie ein Magazin, in den Holztönen der Schindeln und dem dunklen Grün der Fassade.</p>
+        <div class="farben" aria-hidden="true"><span style="background:#FBFAF7"></span><span style="background:#EBD9BC"></span><span style="background:#2E3430"></span><span style="background:#E39A2A"></span></div>
+        <span class="los">Entwurf ansehen</span>
+      </div>
+    </a>
+  </div>
+</main>
+</body>
+</html>
