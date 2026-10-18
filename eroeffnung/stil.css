@@ -71,6 +71,10 @@ p{margin:0 0 1em;max-width:60ch}
 .zeiten{margin-inline:auto}
 .zeiten>div{text-align:center}
 .zeiten th,.zeiten td,.zeiten td:last-child{text-align:center}
+.zeiten table,.zeiten tbody,.zeiten tr,.zeiten th,.zeiten td{display:block}
+.zeiten tr{padding:16px 0;border-bottom:1px solid var(--linie)}
+.zeiten th,.zeiten td{padding:0;border:0}
+.zeiten th{margin-bottom:4px}
 .zeiten .klein{font-size:.95rem;color:var(--leise);margin-top:22px}
 .zeiten .bogen{aspect-ratio:1/1;max-width:420px;justify-self:center;width:100%}
 
