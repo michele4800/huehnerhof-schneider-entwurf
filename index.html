@@ -4,34 +4,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Website-Entwürfe Hühnerhof Schneider</title>
-<meta name="description" content="Drei Entwürfe für die neue Website von Hühnerhof Schneider und Schneiders Hofladen & Hofcafé in Deckenpfronn.">
+<meta name="description" content="Drei Entwürfe für die neue Website von Hühnerhof Schneider und Schneiders Hofladen & Hofcafé in Deckenpfronn – mit Auswahl und Änderungswünschen.">
 <meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="bilder/favicon-schneiders.png">
 <link rel="stylesheet" href="gemeinsam/schriften/uebersicht.css">
 <style>
-:root{--grund:#F6F4EF;--text:#24221F;--leise:#6B665E;--linie:#E2DED5}
+:root{--grund:#F6F4EF;--text:#24221F;--leise:#615C54;--linie:#DDD8CD;--akzent:#2F6F8A;--gut:#2D6A1F}
 *{box-sizing:border-box}
+.nur-vorleser{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--grund);color:var(--text);font:400 1.02rem/1.6 "Manrope",system-ui,sans-serif}
 img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:3px solid var(--akzent);outline-offset:3px}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-header{padding:64px 0 40px}
+header{padding:64px 0 32px}
 header img{width:120px;margin-bottom:22px}
 h1{font:400 clamp(2.4rem,5vw,3.8rem)/1.05 "Instrument Serif",Georgia,serif;margin:0;max-width:20ch}
-header p{color:var(--leise);max-width:62ch;margin:18px 0 0;font-size:1.1rem}
-.liste{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-bottom:40px}
+h2.gross{font:400 clamp(2rem,4vw,3rem)/1.1 "Instrument Serif",Georgia,serif;margin:0 0 10px}
+header p,.einleitung{color:var(--leise);max-width:64ch;margin:18px 0 0;font-size:1.1rem}
+.schritte{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0 0;padding:0}
+.schritte li{counter-increment:s;background:#fff;border:1px solid var(--linie);border-radius:10px;padding:16px 18px 16px 58px;position:relative}
+.schritte li::before{content:counter(s);position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--text);color:#fff;display:grid;place-items:center;font-weight:700}
+.liste{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:40px 0}
 .karte{display:flex;flex-direction:column;text-decoration:none;color:inherit;border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--linie);transition:transform .15s,box-shadow .15s}
 .karte:hover{transform:translateY(-3px);box-shadow:0 18px 30px -18px rgba(0,0,0,.35)}
-.karte:focus-visible{outline:3px solid #E39A2A;outline-offset:3px}
 .bild{position:relative;aspect-ratio:4/3;overflow:hidden}
 .bild img{width:100%;height:100%;object-fit:cover}
-.probe{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,.65))}
+.probe{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,.7))}
 .inhalt{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
-.inhalt h2{margin:0;font:700 1.25rem/1.2 "Manrope",sans-serif}
+.inhalt h3{margin:0;font:700 1.25rem/1.2 "Manrope",sans-serif}
 .inhalt p{margin:0;color:var(--leise)}
 .farben{display:flex;gap:6px;margin-top:auto;padding-top:10px}
 .farben span{width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.08)}
 .los{font-weight:700;margin-top:6px}
-/* Schriftproben der Varianten */
 .v1 .bild{background:#F3EFE6}
 .v1 .probe{background:none;color:#6F6254;text-align:center;top:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .v1 .probe img{width:46%;margin-bottom:10px}
@@ -39,57 +45,215 @@ header p{color:var(--leise);max-width:62ch;margin:18px 0 0;font-size:1.1rem}
 .v1 .probe i{font:400 1.8rem "Allura",cursive;font-style:normal}
 .v2 .probe b{font:800 2.2rem/0.95 "Barlow Condensed",sans-serif;text-transform:uppercase;display:block}
 .v3 .probe b{font:400 2.1rem/1 "Instrument Serif",serif;display:block}
-.alt{border-top:1px solid var(--linie);padding:28px 0 64px;color:var(--leise)}
-.alt a{color:var(--text)}
-@media (max-width:900px){.liste{grid-template-columns:1fr 1fr}}
-@media (max-width:620px){.wrap{padding:0 16px}.liste{grid-template-columns:1fr}header{padding:40px 0 28px}}
+
+/* Formular */
+.formular{background:#fff;border:1px solid var(--linie);border-radius:14px;padding:40px;margin:16px 0 72px}
+fieldset{border:0;border-top:1px solid var(--linie);margin:0;padding:28px 0 8px}
+fieldset:first-of-type{border-top:0;padding-top:12px}
+legend{font:700 1.2rem/1.3 "Manrope",sans-serif;padding:0;margin-bottom:6px;float:left;width:100%}
+legend+*{clear:both}
+.hilfe{color:var(--leise);margin:0 0 14px;font-size:.95rem}
+.wahl{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 16px}
+.wahl label{display:flex;gap:10px;align-items:flex-start;border:2px solid var(--linie);border-radius:10px;padding:14px;cursor:pointer;font-weight:600}
+.wahl label:has(input:checked){border-color:var(--text);background:#F3F1EB}
+.wahl label small{display:block;font-weight:400;color:var(--leise)}
+.frage{margin:0 0 20px}
+.frage>label,.frage>p.titel{display:block;font-weight:600;margin:0 0 6px}
+.optionen{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 8px}
+.optionen label{display:flex;gap:8px;align-items:center;font-weight:400;cursor:pointer;min-height:32px}
+input[type=radio],input[type=checkbox]{width:20px;height:20px;accent-color:var(--text);flex:none}
+input[type=text],textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid #8C877E;border-radius:8px;background:#fff;color:var(--text)}
+textarea{min-height:96px;resize:vertical}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.notizen{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:10px}
+.notizen li{border:1px solid var(--linie);border-radius:10px;padding:12px 14px;display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:start}
+.notizen b{font-size:.9rem;color:var(--leise);font-weight:600}
+.notizen p{margin:0;grid-column:1;white-space:pre-wrap}
+.notizen button{grid-row:1/3;grid-column:2;font:600 .9rem "Manrope",sans-serif;background:none;border:1px solid #8C877E;border-radius:999px;padding:6px 12px;cursor:pointer}
+.leer{color:var(--leise);font-style:italic}
+.senden{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.senden button,.senden a{font:700 1rem "Manrope",sans-serif;border-radius:999px;padding:13px 22px;cursor:pointer;border:2px solid var(--text);text-decoration:none;display:inline-flex;align-items:center}
+.senden .haupt{background:var(--text);color:#fff}
+.senden .neben{background:#fff;color:var(--text)}
+.meldung{min-height:1.4em;margin:14px 0 0;font-weight:600;color:var(--gut)}
+.datenschutz-hinweis{font-size:.92rem;color:var(--leise);margin:18px 0 0}
+details.vorschau{margin-top:18px}
+details.vorschau summary{cursor:pointer;font-weight:600}
+details.vorschau pre{white-space:pre-wrap;background:#F6F4EF;border-radius:8px;padding:14px;font:400 .9rem/1.5 ui-monospace,Consolas,monospace;max-height:420px;overflow:auto}
+@media (max-width:900px){.liste,.schritte{grid-template-columns:1fr 1fr}.wahl{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.wrap{padding:0 16px}.liste,.schritte,.wahl,.zwei{grid-template-columns:1fr}header{padding:40px 0 20px}.formular{padding:22px 18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.karte{transition:none}}
 </style>
 </head>
 <body>
 <header class="wrap">
   <img src="bilder/logo-schneiders.webp" alt="Schneiders Hofladen & Hofcafé" width="640" height="399">
   <h1>Drei Entwürfe für die neue Website</h1>
-  <p>Für Hühnerhof Schneider und Schneiders Hofladen &amp; Hofcafé in Deckenpfronn. Alle drei haben denselben Aufbau: Auf der Startseite stehen Hofladen und Hofcafé. Hofbus und Wochenmärkte bekommen eine eigene Seite mit Zeiten und Karte zu jeder Station, die Geschichte ein eigenes Kapitel. Die Fotos stammen vom Instagram-Kanal. Am besten auch auf dem Handy anschauen.</p>
+  <p>Für Hühnerhof Schneider und Schneiders Hofladen &amp; Hofcafé in Deckenpfronn. Alle drei haben denselben Aufbau: Auf der Startseite stehen Hofladen und Hofcafé, Hofbus und Wochenmärkte haben eine eigene Seite mit Zeiten und Karte, die Geschichte ein eigenes Kapitel.</p>
+  <ol class="schritte">
+    <li><strong>Anschauen.</strong> Klickt euch durch die Entwürfe – am besten auch auf dem Handy.</li>
+    <li><strong>Notieren.</strong> Auf jeder Seite gibt es unten rechts den Knopf „Anmerkung“.</li>
+    <li><strong>Auswählen und senden.</strong> Unten euren Stil wählen, Fragen beantworten und abschicken.</li>
+  </ol>
 </header>
 
 <main class="wrap">
+  <h2 class="nur-vorleser">Die drei Entwürfe</h2>
   <div class="liste">
     <a class="karte v1" href="eroeffnung/">
-      <div class="bild">
-        <div class="probe"><img src="bilder/logo-schneiders.webp" alt=""><b>Eröffnung</b><i>Wir freuen uns auf euch!</i></div>
-      </div>
+      <div class="bild"><div class="probe"><img src="bilder/logo-schneiders.webp" alt=""><b>Eröffnung</b><i>Wir freuen uns auf euch!</i></div></div>
       <div class="inhalt">
-        <h2>1. Eröffnung</h2>
+        <h3>1. Eröffnung</h3>
         <p>Im Stil der neuen Posts und des Eröffnungsplakats: ruhig, hell, mit dem neuen Schneiders-Logo und Fotos in Rundbögen.</p>
-        <div class="farben" aria-hidden="true"><span style="background:#F3EFE6"></span><span style="background:#6F6254"></span><span style="background:#857F6B"></span><span style="background:#FFFDF8"></span></div>
+        <div class="farben" aria-hidden="true"><span style="background:#F3EFE6"></span><span style="background:#6F6254"></span><span style="background:#7A7462"></span><span style="background:#FFFDF8"></span></div>
         <span class="los">Entwurf ansehen</span>
       </div>
     </a>
     <a class="karte v2" href="hofbus/">
       <div class="bild">
-        <img alt="" loading="lazy" src="bilder/neubau-aussen.webp" srcset="bilder/neubau-aussen-640.webp 640w, bilder/neubau-aussen.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw" width="1200" height="747">
-        <div class="probe"><b>Hofladen &amp; Hofcafé direkt am Hof.</b></div>
+        <img alt="" loading="lazy" src="bilder/neubau-aussen-640.webp" srcset="bilder/neubau-aussen-640.webp 640w, bilder/neubau-aussen.webp 1200w" sizes="(max-width: 900px) 100vw, 33vw" width="1200" height="747">
+        <div class="probe"><b>Hofladen &amp; Hofcafé in Deckenpfronn.</b></div>
       </div>
       <div class="inhalt">
-        <h2>2. Kräftig</h2>
+        <h3>2. Kräftig</h3>
         <p>Fotografisch und laut, im Grün des Hühnerhof-Logos. Große Bilder, große Schrift und die Hofbus-Tour als Routenlinie.</p>
-        <div class="farben" aria-hidden="true"><span style="background:#6E7F2A"></span><span style="background:#F2C14E"></span><span style="background:#1E2312"></span><span style="background:#F7F6F0"></span></div>
+        <div class="farben" aria-hidden="true"><span style="background:#5B6A22"></span><span style="background:#F2C14E"></span><span style="background:#1E2312"></span><span style="background:#F7F6F0"></span></div>
         <span class="los">Entwurf ansehen</span>
       </div>
     </a>
     <a class="karte v3" href="hofgeschichte/">
       <div class="bild">
-        <img alt="" loading="lazy" src="bilder/schindel-detail.webp" srcset="bilder/schindel-detail-640.webp 640w, bilder/schindel-detail.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw" width="1200" height="1360">
+        <img alt="" loading="lazy" src="bilder/schindel-detail-640.webp" srcset="bilder/schindel-detail-640.webp 640w, bilder/schindel-detail.webp 1200w" sizes="(max-width: 900px) 100vw, 33vw" width="1200" height="1360">
         <div class="probe"><b>Unser Hofladen. Mit Café. Direkt am Hühnerhof.</b></div>
       </div>
       <div class="inhalt">
-        <h2>3. Erzählend</h2>
+        <h3>3. Erzählend</h3>
         <p>Ruhig erzählt wie ein Magazin, in den Holztönen der Schindeln und dem dunklen Grün der Fassade.</p>
-        <div class="farben" aria-hidden="true"><span style="background:#FBFAF7"></span><span style="background:#EBD9BC"></span><span style="background:#2E3430"></span><span style="background:#E39A2A"></span></div>
+        <div class="farben" aria-hidden="true"><span style="background:#FBFAF7"></span><span style="background:#EBD9BC"></span><span style="background:#2E3430"></span><span style="background:#936B3D"></span></div>
         <span class="los">Entwurf ansehen</span>
       </div>
     </a>
   </div>
+
+  <section id="auswahl" aria-labelledby="auswahl-titel">
+    <h2 class="gross" id="auswahl-titel">Eure Auswahl und Wünsche</h2>
+    <p class="einleitung" style="margin-top:0">Alles ist freiwillig – füllt aus, was ihr schon wisst. Eure Eingaben werden automatisch in diesem Browser zwischengespeichert, ihr könnt also später weitermachen.</p>
+
+    <form class="formular" id="wuensche" novalidate>
+      <fieldset>
+        <legend>1. Welcher Stil gefällt euch?</legend>
+        <div class="wahl">
+          <label><input type="radio" name="stil" value="Entwurf 1 – Eröffnung"><span>Entwurf 1<small>Eröffnung</small></span></label>
+          <label><input type="radio" name="stil" value="Entwurf 2 – Kräftig"><span>Entwurf 2<small>Kräftig</small></span></label>
+          <label><input type="radio" name="stil" value="Entwurf 3 – Erzählend"><span>Entwurf 3<small>Erzählend</small></span></label>
+          <label><input type="radio" name="stil" value="Mischung"><span>Mischung<small>aus mehreren</small></span></label>
+        </div>
+        <div class="frage">
+          <label for="stil-notiz">Was gefällt euch besonders, was soll aus einem anderen Entwurf dazu?</label>
+          <textarea id="stil-notiz" name="stil_notiz" placeholder="z. B. „Startseite von Entwurf 1, aber die Hofbus-Route aus Entwurf 2“"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Ein paar Fragen zu Hof, Bus und Laden</legend>
+        <div class="frage">
+          <p class="titel" id="f-bus">Fährt der Hofbus nach der Eröffnung weiter wie bisher?</p>
+          <div class="optionen" role="radiogroup" aria-labelledby="f-bus">
+            <label><input type="radio" name="hofbus" value="Ja, wie bisher">Ja, wie bisher</label>
+            <label><input type="radio" name="hofbus" value="Ja, mit anderen Zeiten/Orten">Ja, mit anderen Zeiten/Orten</label>
+            <label><input type="radio" name="hofbus" value="Nein, der Hofbus fährt nicht mehr">Nein</label>
+          </div>
+          <label for="hofbus-notiz" class="nur-vorleser">Neue Zeiten oder Orte des Hofbus</label>
+          <input type="text" id="hofbus-notiz" name="hofbus_notiz" placeholder="Falls geändert: neue Zeiten oder Orte">
+        </div>
+        <div class="zwei">
+          <div class="frage">
+            <label for="boeblingen">Mittwochs in Böblingen: von wann bis wann?</label>
+            <input type="text" id="boeblingen" name="boeblingen" placeholder="z. B. 7 bis 12 Uhr">
+          </div>
+          <div class="frage">
+            <p class="titel" id="f-karte">Kartenzahlung im neuen Hofladen?</p>
+            <div class="optionen" role="radiogroup" aria-labelledby="f-karte">
+              <label><input type="radio" name="karte" value="Ja">Ja</label>
+              <label><input type="radio" name="karte" value="Nein">Nein</label>
+              <label><input type="radio" name="karte" value="Noch offen">Noch offen</label>
+            </div>
+          </div>
+        </div>
+        <div class="frage">
+          <label for="sortiment">Stimmt das Sortiment so? Was fehlt, was gibt es nicht mehr?</label>
+          <textarea id="sortiment" name="sortiment" placeholder="Bisher genannt: Eier, Eierlikör, Äpfel und Birnen, Nudeln, Linsen, Mehl, Honig, Marmelade, Brot, Wurst, Fleisch, Käse, Obst und Gemüse, Wein, Eis"></textarea>
+        </div>
+        <div class="frage">
+          <label for="cafe">Was gibt es im Hofcafé? (z. B. Kaffee, Kuchen, Frühstück)</label>
+          <textarea id="cafe" name="cafe" placeholder="Damit wir das Café-Angebot richtig beschreiben"></textarea>
+        </div>
+        <div class="frage">
+          <p class="titel" id="f-fotos">Dürfen wir eure Instagram-Fotos auf der Website verwenden?</p>
+          <div class="optionen" role="radiogroup" aria-labelledby="f-fotos">
+            <label><input type="radio" name="fotos" value="Ja, alle">Ja, alle</label>
+            <label><input type="radio" name="fotos" value="Nur bestimmte">Nur bestimmte</label>
+            <label><input type="radio" name="fotos" value="Nein, wir schicken eigene">Nein, wir schicken eigene</label>
+          </div>
+          <label><span style="display:flex;gap:8px;align-items:center;font-weight:400"><input type="checkbox" name="neue_fotos" value="ja">Wir schicken zusätzlich neue Fotos (z. B. vom fertigen Laden und Café)</span></label>
+        </div>
+        <div class="zwei">
+          <div class="frage">
+            <p class="titel" id="f-impressum">Wer soll im Impressum stehen?</p>
+            <div class="optionen" role="radiogroup" aria-labelledby="f-impressum">
+              <label><input type="radio" name="impressum" value="Hühnerhof Schneider">Hühnerhof Schneider</label>
+              <label><input type="radio" name="impressum" value="Schneiders Hofladen & Hofcafé GmbH">Die GmbH</label>
+              <label><input type="radio" name="impressum" value="Beide">Beide</label>
+            </div>
+          </div>
+          <div class="frage">
+            <label for="ustid">USt-IdNr. der GmbH (falls vorhanden)</label>
+            <input type="text" id="ustid" name="ustid" placeholder="DE…">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Änderungswünsche</legend>
+        <p class="hilfe">Texte, Fotos, Farben, Reihenfolge – alles, was anders sein soll.</p>
+        <div class="zwei">
+          <div class="frage"><label for="w-start">Startseite (Hofladen &amp; Hofcafé)</label><textarea id="w-start" name="wunsch_start"></textarea></div>
+          <div class="frage"><label for="w-mobil">Hofbus &amp; Märkte</label><textarea id="w-mobil" name="wunsch_mobil"></textarea></div>
+          <div class="frage"><label for="w-geschichte">Geschichte</label><textarea id="w-geschichte" name="wunsch_geschichte"></textarea></div>
+          <div class="frage"><label for="w-allgemein">Allgemein (Farben, Schrift, Logo, sonstiges)</label><textarea id="w-allgemein" name="wunsch_allgemein"></textarea></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Eure Anmerkungen beim Durchklicken</legend>
+        <p class="hilfe">Was ihr auf den Entwurfsseiten über den Knopf „Anmerkung“ notiert habt, wird hier automatisch mitgeschickt.</p>
+        <ul class="notizen" id="notizen" aria-live="polite"></ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Von wem kommt das?</legend>
+        <div class="zwei">
+          <div class="frage"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name"></div>
+          <div class="frage"><label for="rueckruf">Telefon für Rückfragen (optional)</label><input type="text" id="rueckruf" name="rueckruf" autocomplete="tel"></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. Abschicken</legend>
+        <p class="hilfe">Wählt, wie ihr es schicken wollt. Es öffnet sich WhatsApp bzw. euer E-Mail-Programm mit dem fertigen Text – ihr müsst nur noch den Empfänger auswählen und senden.</p>
+        <div class="senden">
+          <button type="button" class="haupt" data-senden="whatsapp">Per WhatsApp senden</button>
+          <button type="button" class="neben" data-senden="mail">Per E-Mail senden</button>
+          <button type="button" class="neben" data-senden="kopieren">Text kopieren</button>
+          <button type="button" class="neben" data-senden="leeren">Alles leeren</button>
+        </div>
+        <p class="meldung" id="meldung" role="status"></p>
+        <details class="vorschau"><summary>Vorschau des Textes anzeigen</summary><pre id="vorschau"></pre></details>
+        <p class="datenschutz-hinweis">Eure Eingaben werden nicht auf einem Server gespeichert, sondern nur in diesem Browser – bis ihr sie selbst verschickt.</p>
+      </fieldset>
+    </form>
+  </section>
 </main>
+<script src="gemeinsam/auswahl.js"></script>
 </body>
 </html>

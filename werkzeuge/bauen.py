@@ -306,10 +306,11 @@ def pakete():
             t = befüllen(t, seite, ent, LIVE, pfad="")
             t = re.sub(r"\.\./(bilder|gemeinsam)/", r"\1/", t)
             t = re.sub(r'\s*<a class="entwurf"[^>]*>.*?</a>', "", t)  # Entwurfs-Schild raus
+            t = re.sub(r'\s*<script src="gemeinsam/anmerkung\.js"></script>', "", t)  # Anmerkungs-Knopf nur in der Vorschau
             # noindex bleibt drin, bis der Hof die Freigabe gibt
             open(os.path.join(z, seite), "w", encoding="utf-8").write(t)
         shutil.copy(os.path.join(ROOT, ent, "stil.css"), z)
-        shutil.copytree(os.path.join(ROOT, "gemeinsam"), os.path.join(z, "gemeinsam"))
+        shutil.copytree(os.path.join(ROOT, "gemeinsam"), os.path.join(z, "gemeinsam"), ignore=shutil.ignore_patterns("anmerkung.js", "auswahl.js"))  # nur für die Vorschau
         shutil.copytree(os.path.join(ROOT, "bilder"), os.path.join(z, "bilder"))
         open(os.path.join(z, "sitemap.xml"), "w", encoding="utf-8").write(
             '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
