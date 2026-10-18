@@ -64,7 +64,7 @@ p{margin:0 0 1em;max-width:60ch}
 .mitte{text-align:center;margin:44px auto 0;color:var(--leise)}
 
 /* Öffnungszeiten */
-.zeiten{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.zeiten{display:grid;grid-template-columns:1fr;max-width:720px;gap:64px;align-items:center}
 .zeiten table{width:100%;border-collapse:collapse;font-size:1.1rem}
 .zeiten td,.zeiten th{padding:16px 0;border-bottom:1px solid var(--linie);vertical-align:top;text-align:left;font-weight:400}
 .zeiten td:last-child{text-align:right;color:var(--taupe)}

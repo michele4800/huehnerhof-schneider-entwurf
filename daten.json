@@ -84,7 +84,7 @@
     { "wann": "Juli 2026", "titel": "Holzfassade und Schindelwand", "bild": "schindelwand", "alt": "Lange Wand aus hellen Holzschindeln",
       "text": "Die Fassade bekommt ihr Holzkleid, die Außentreppe ins Obergeschoss steht, und oben ist die erste Wand mit Schindeln fertig.",
       "quelle": "Instagram-Post Juli 2026" },
-    { "wann": "Kurz vor der Eröffnung", "titel": "Das Herzstück zieht ein", "bild": "espresso", "alt": "Die neue Espressomaschine",
+    { "wann": "Kurz vor der Eröffnung", "titel": "Das Herzstück zieht ein", "zeichen": "ei",
       "text": "Die Espressomaschine für das Hofcafé ist da.",
       "quelle": "Instagram-Highlight „Neuer Hofladen“" },
     { "wann": "7. November 2026", "titel": "Eröffnung", "ziel": true, "bild": "neubau-aussen", "alt": "Der neue Hofladen aus Holz in Deckenpfronn",

@@ -65,7 +65,7 @@ p{margin:0 0 1em;max-width:60ch}
 .gruen .kopfzeile p,.dunkel .kopfzeile p{color:inherit}
 
 /* Öffnungszeiten */
-.zeiten{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.zeiten{display:grid;grid-template-columns:1fr;max-width:720px;gap:56px;align-items:center}
 .zeitliste{margin:28px 0 0;display:grid;grid-template-columns:auto 1fr;gap:0}
 .zeitliste dt,.zeitliste dd{padding:14px 0;border-bottom:2px solid var(--rand);margin:0}
 .zeitliste dt{font-family:var(--kopf);font-weight:800;font-size:1.6rem;text-transform:uppercase;padding-right:28px}
