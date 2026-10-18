@@ -68,6 +68,9 @@ p{margin:0 0 1em;max-width:60ch}
 .zeiten table{width:100%;border-collapse:collapse;font-size:1.1rem}
 .zeiten td,.zeiten th{padding:16px 0;border-bottom:1px solid var(--linie);vertical-align:top;text-align:left;font-weight:400}
 .zeiten td:last-child{text-align:right;color:var(--taupe)}
+.zeiten{margin-inline:auto}
+.zeiten>div{text-align:center}
+.zeiten th,.zeiten td,.zeiten td:last-child{text-align:center}
 .zeiten .klein{font-size:.95rem;color:var(--leise);margin-top:22px}
 .zeiten .bogen{aspect-ratio:1/1;max-width:420px;justify-self:center;width:100%}
 
