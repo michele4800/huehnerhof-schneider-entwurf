@@ -75,6 +75,9 @@ p{margin:0 0 1em;max-width:60ch}
 .zeiten tr{padding:16px 0;border-bottom:1px solid var(--linie)}
 .zeiten th,.zeiten td{padding:0;border:0}
 .zeiten th{margin-bottom:4px}
+.zeiten p,.zeiten p[style]{margin-inline:auto!important;text-align:center}
+.zeiten h2{padding-left:.22em}
+.zeiten p[style*="letter-spacing"]{padding-left:.2em}
 .zeiten .klein{font-size:.95rem;color:var(--leise);margin-top:22px}
 .zeiten .bogen{aspect-ratio:1/1;max-width:420px;justify-self:center;width:100%}
 
