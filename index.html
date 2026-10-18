@@ -46,42 +46,14 @@ header p,.einleitung{color:var(--leise);max-width:64ch;margin:18px 0 0;font-size
 .v2 .probe b{font:800 2.2rem/0.95 "Barlow Condensed",sans-serif;text-transform:uppercase;display:block}
 .v3 .probe b{font:400 2.1rem/1 "Instrument Serif",serif;display:block}
 
-/* Formular */
-.formular{background:#fff;border:1px solid var(--linie);border-radius:14px;padding:40px;margin:16px 0 72px}
-fieldset{border:0;border-top:1px solid var(--linie);margin:0;padding:28px 0 8px}
-fieldset:first-of-type{border-top:0;padding-top:12px}
-legend{font:700 1.2rem/1.3 "Manrope",sans-serif;padding:0;margin-bottom:6px;float:left;width:100%}
-legend+*{clear:both}
-.hilfe{color:var(--leise);margin:0 0 14px;font-size:.95rem}
-.wahl{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 16px}
-.wahl label{display:flex;gap:10px;align-items:flex-start;border:2px solid var(--linie);border-radius:10px;padding:14px;cursor:pointer;font-weight:600}
-.wahl label:has(input:checked){border-color:var(--text);background:#F3F1EB}
-.wahl label small{display:block;font-weight:400;color:var(--leise)}
-.frage{margin:0 0 20px}
-.frage>label,.frage>p.titel{display:block;font-weight:600;margin:0 0 6px}
-.optionen{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 8px}
-.optionen label{display:flex;gap:8px;align-items:center;font-weight:400;cursor:pointer;min-height:32px}
-input[type=radio],input[type=checkbox]{width:20px;height:20px;accent-color:var(--text);flex:none}
-input[type=text],textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid #8C877E;border-radius:8px;background:#fff;color:var(--text)}
-textarea{min-height:96px;resize:vertical}
-.zwei{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.notizen{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:10px}
-.notizen li{border:1px solid var(--linie);border-radius:10px;padding:12px 14px;display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:start}
-.notizen b{font-size:.9rem;color:var(--leise);font-weight:600}
-.notizen p{margin:0;grid-column:1;white-space:pre-wrap}
-.notizen button{grid-row:1/3;grid-column:2;font:600 .9rem "Manrope",sans-serif;background:none;border:1px solid #8C877E;border-radius:999px;padding:6px 12px;cursor:pointer}
-.leer{color:var(--leise);font-style:italic}
-.senden{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
-.senden button,.senden a{font:700 1rem "Manrope",sans-serif;border-radius:999px;padding:13px 22px;cursor:pointer;border:2px solid var(--text);text-decoration:none;display:inline-flex;align-items:center}
-.senden .haupt{background:var(--text);color:#fff}
-.senden .neben{background:#fff;color:var(--text)}
-.meldung{min-height:1.4em;margin:14px 0 0;font-weight:600;color:var(--gut)}
-.datenschutz-hinweis{font-size:.92rem;color:var(--leise);margin:18px 0 0}
-details.vorschau{margin-top:18px}
-details.vorschau summary{cursor:pointer;font-weight:600}
-details.vorschau pre{white-space:pre-wrap;background:#F6F4EF;border-radius:8px;padding:14px;font:400 .9rem/1.5 ui-monospace,Consolas,monospace;max-height:420px;overflow:auto}
-@media (max-width:900px){.liste,.schritte{grid-template-columns:1fr 1fr}.wahl{grid-template-columns:1fr 1fr}}
-@media (max-width:620px){.wrap{padding:0 16px}.liste,.schritte,.wahl,.zwei{grid-template-columns:1fr}header{padding:40px 0 20px}.formular{padding:22px 18px}}
+/* Rückmeldung */
+.dok-box{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:#fff;border:1px solid var(--linie);border-radius:14px;padding:28px 32px;margin:20px 0 0}
+.dok-titel{font-weight:700;font-size:1.15rem;margin:0 0 4px}
+.hilfe{color:var(--leise);margin:0;font-size:.95rem}
+.dok-knopf{font:700 1rem "Manrope",sans-serif;border-radius:999px;padding:14px 26px;background:var(--text);color:#fff;text-decoration:none}
+.datenschutz-hinweis{font-size:.95rem;color:var(--leise);margin:16px 0 72px}
+@media (max-width:900px){.liste,.schritte{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.wrap{padding:0 16px}.liste,.schritte{grid-template-columns:1fr}header{padding:40px 0 20px}.dok-box{padding:22px 18px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.karte{transition:none}}
 </style>
 </head>
@@ -92,8 +64,8 @@ details.vorschau pre{white-space:pre-wrap;background:#F6F4EF;border-radius:8px;p
   <p>Für Hühnerhof Schneider und Schneiders Hofladen &amp; Hofcafé in Deckenpfronn. Alle drei haben denselben Aufbau: Auf der Startseite stehen Hofladen und Hofcafé, Hofbus und Wochenmärkte haben eine eigene Seite mit Zeiten und Karte, die Geschichte ein eigenes Kapitel.</p>
   <ol class="schritte">
     <li><strong>Anschauen.</strong> Klickt euch durch die Entwürfe – am besten auch auf dem Handy.</li>
-    <li><strong>Notieren.</strong> Auf jeder Seite gibt es unten rechts den Knopf „Anmerkung“.</li>
-    <li><strong>Auswählen und senden.</strong> Unten euren Stil wählen, Fragen beantworten und abschicken.</li>
+    <li><strong>Notieren.</strong> Auf jeder Seite führt der Knopf „Rückmeldung“ unten rechts in unser gemeinsames Dokument.</li>
+    <li><strong>Auswählen.</strong> Im Dokument euren Stil wählen und die Fragen beantworten – wir sehen es sofort.</li>
   </ol>
 </header>
 
@@ -135,125 +107,18 @@ details.vorschau pre{white-space:pre-wrap;background:#F6F4EF;border-radius:8px;p
     </a>
   </div>
 
-  <section id="auswahl" aria-labelledby="auswahl-titel">
+  <section id="auswahl" class="rueckmeldung" aria-labelledby="auswahl-titel">
     <h2 class="gross" id="auswahl-titel">Eure Auswahl und Wünsche</h2>
-    <p class="einleitung" style="margin-top:0">Alles ist freiwillig – füllt aus, was ihr schon wisst. Eure Eingaben werden automatisch in diesem Browser zwischengespeichert, ihr könnt also später weitermachen.</p>
-
-    <form class="formular" id="wuensche" novalidate>
-      <fieldset>
-        <legend>1. Welcher Stil gefällt euch?</legend>
-        <div class="wahl">
-          <label><input type="radio" name="stil" value="Entwurf 1 – Eröffnung"><span>Entwurf 1<small>Eröffnung</small></span></label>
-          <label><input type="radio" name="stil" value="Entwurf 2 – Kräftig"><span>Entwurf 2<small>Kräftig</small></span></label>
-          <label><input type="radio" name="stil" value="Entwurf 3 – Erzählend"><span>Entwurf 3<small>Erzählend</small></span></label>
-          <label><input type="radio" name="stil" value="Mischung"><span>Mischung<small>aus mehreren</small></span></label>
-        </div>
-        <div class="frage">
-          <label for="stil-notiz">Was gefällt euch besonders, was soll aus einem anderen Entwurf dazu?</label>
-          <textarea id="stil-notiz" name="stil_notiz" placeholder="z. B. „Startseite von Entwurf 1, aber die Hofbus-Route aus Entwurf 2“"></textarea>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>2. Ein paar Fragen zu Hof, Bus und Laden</legend>
-        <div class="frage">
-          <p class="titel" id="f-bus">Fährt der Hofbus nach der Eröffnung weiter wie bisher?</p>
-          <div class="optionen" role="radiogroup" aria-labelledby="f-bus">
-            <label><input type="radio" name="hofbus" value="Ja, wie bisher">Ja, wie bisher</label>
-            <label><input type="radio" name="hofbus" value="Ja, mit anderen Zeiten/Orten">Ja, mit anderen Zeiten/Orten</label>
-            <label><input type="radio" name="hofbus" value="Nein, der Hofbus fährt nicht mehr">Nein</label>
-          </div>
-          <label for="hofbus-notiz" class="nur-vorleser">Neue Zeiten oder Orte des Hofbus</label>
-          <input type="text" id="hofbus-notiz" name="hofbus_notiz" placeholder="Falls geändert: neue Zeiten oder Orte">
-        </div>
-        <div class="zwei">
-          <div class="frage">
-            <label for="boeblingen">Mittwochs in Böblingen: von wann bis wann?</label>
-            <input type="text" id="boeblingen" name="boeblingen" placeholder="z. B. 7 bis 12 Uhr">
-          </div>
-          <div class="frage">
-            <p class="titel" id="f-karte">Kartenzahlung im neuen Hofladen?</p>
-            <div class="optionen" role="radiogroup" aria-labelledby="f-karte">
-              <label><input type="radio" name="karte" value="Ja">Ja</label>
-              <label><input type="radio" name="karte" value="Nein">Nein</label>
-              <label><input type="radio" name="karte" value="Noch offen">Noch offen</label>
-            </div>
-          </div>
-        </div>
-        <div class="frage">
-          <label for="sortiment">Stimmt das Sortiment so? Was fehlt, was gibt es nicht mehr?</label>
-          <textarea id="sortiment" name="sortiment" placeholder="Bisher genannt: Eier, Eierlikör, Äpfel und Birnen, Nudeln, Linsen, Mehl, Honig, Marmelade, Brot, Wurst, Fleisch, Käse, Obst und Gemüse, Wein, Eis"></textarea>
-        </div>
-        <div class="frage">
-          <label for="cafe">Was gibt es im Hofcafé? (z. B. Kaffee, Kuchen, Frühstück)</label>
-          <textarea id="cafe" name="cafe" placeholder="Damit wir das Café-Angebot richtig beschreiben"></textarea>
-        </div>
-        <div class="frage">
-          <p class="titel" id="f-fotos">Dürfen wir eure Instagram-Fotos auf der Website verwenden?</p>
-          <div class="optionen" role="radiogroup" aria-labelledby="f-fotos">
-            <label><input type="radio" name="fotos" value="Ja, alle">Ja, alle</label>
-            <label><input type="radio" name="fotos" value="Nur bestimmte">Nur bestimmte</label>
-            <label><input type="radio" name="fotos" value="Nein, wir schicken eigene">Nein, wir schicken eigene</label>
-          </div>
-          <label><span style="display:flex;gap:8px;align-items:center;font-weight:400"><input type="checkbox" name="neue_fotos" value="ja">Wir schicken zusätzlich neue Fotos (z. B. vom fertigen Laden und Café)</span></label>
-        </div>
-        <div class="zwei">
-          <div class="frage">
-            <p class="titel" id="f-impressum">Wer soll im Impressum stehen?</p>
-            <div class="optionen" role="radiogroup" aria-labelledby="f-impressum">
-              <label><input type="radio" name="impressum" value="Hühnerhof Schneider">Hühnerhof Schneider</label>
-              <label><input type="radio" name="impressum" value="Schneiders Hofladen & Hofcafé GmbH">Die GmbH</label>
-              <label><input type="radio" name="impressum" value="Beide">Beide</label>
-            </div>
-          </div>
-          <div class="frage">
-            <label for="ustid">USt-IdNr. der GmbH (falls vorhanden)</label>
-            <input type="text" id="ustid" name="ustid" placeholder="DE…">
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>3. Änderungswünsche</legend>
-        <p class="hilfe">Texte, Fotos, Farben, Reihenfolge – alles, was anders sein soll.</p>
-        <div class="zwei">
-          <div class="frage"><label for="w-start">Startseite (Hofladen &amp; Hofcafé)</label><textarea id="w-start" name="wunsch_start"></textarea></div>
-          <div class="frage"><label for="w-mobil">Hofbus &amp; Märkte</label><textarea id="w-mobil" name="wunsch_mobil"></textarea></div>
-          <div class="frage"><label for="w-geschichte">Geschichte</label><textarea id="w-geschichte" name="wunsch_geschichte"></textarea></div>
-          <div class="frage"><label for="w-allgemein">Allgemein (Farben, Schrift, Logo, sonstiges)</label><textarea id="w-allgemein" name="wunsch_allgemein"></textarea></div>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>4. Eure Anmerkungen beim Durchklicken</legend>
-        <p class="hilfe">Was ihr auf den Entwurfsseiten über den Knopf „Anmerkung“ notiert habt, wird hier automatisch mitgeschickt.</p>
-        <ul class="notizen" id="notizen" aria-live="polite"></ul>
-      </fieldset>
-
-      <fieldset>
-        <legend>5. Von wem kommt das?</legend>
-        <div class="zwei">
-          <div class="frage"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name"></div>
-          <div class="frage"><label for="rueckruf">Telefon für Rückfragen (optional)</label><input type="text" id="rueckruf" name="rueckruf" autocomplete="tel"></div>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>6. Abschicken</legend>
-        <p class="hilfe">Wählt, wie ihr es schicken wollt. Es öffnet sich WhatsApp bzw. euer E-Mail-Programm mit dem fertigen Text – ihr müsst nur noch den Empfänger auswählen und senden.</p>
-        <div class="senden">
-          <button type="button" class="haupt" data-senden="whatsapp">Per WhatsApp senden</button>
-          <button type="button" class="neben" data-senden="mail">Per E-Mail senden</button>
-          <button type="button" class="neben" data-senden="kopieren">Text kopieren</button>
-          <button type="button" class="neben" data-senden="leeren">Alles leeren</button>
-        </div>
-        <p class="meldung" id="meldung" role="status"></p>
-        <details class="vorschau"><summary>Vorschau des Textes anzeigen</summary><pre id="vorschau"></pre></details>
-        <p class="datenschutz-hinweis">Eure Eingaben werden nicht auf einem Server gespeichert, sondern nur in diesem Browser – bis ihr sie selbst verschickt.</p>
-      </fieldset>
-    </form>
+    <p class="einleitung" style="margin-top:0">Alles kommt in ein gemeinsames Dokument: Stil wählen, ein paar Fragen beantworten und Änderungswünsche eintragen. Wir sehen eure Einträge sofort und können sie direkt dort mit euch besprechen und abhaken.</p>
+    <div class="dok-box">
+      <div>
+        <p class="dok-titel">Website Hühnerhof Schneider – Rückmeldungen</p>
+        <p class="hilfe">Ein Google-Dokument. Einfach in die leeren Felder schreiben; Rückfragen als Kommentar.</p>
+      </div>
+      <a class="dok-knopf" href="https://docs.google.com/document/d/1s0-y8TOCyhgfgGwpHi800Wgi6SjIm-tamG3MyYi9UAQ/edit" target="_blank" rel="noopener">Dokument öffnen<span class="nur-vorleser"> (neues Fenster)</span></a>
+    </div>
+    <p class="datenschutz-hinweis">Tipp: Auf jeder Entwurfsseite führt der Knopf „Rückmeldung“ unten rechts direkt ins Dokument.</p>
   </section>
 </main>
-<script src="gemeinsam/auswahl.js"></script>
 </body>
 </html>
