@@ -24,6 +24,8 @@ Entwürfe: `eroeffnung/` (Stil der neuen Posts), `hofbus/` (kräftig), `hofgesch
      **statisches HTML** in alle Seiten (zwischen `<!-- hof:… -->`-Markern – dort nichts von Hand ändern),
    - erzeugt Impressum und Datenschutz je Entwurf, `gemeinsam/daten.js` für den Live-Status,
    - baut `livegang/<entwurf>/` und `livegang/livegang-<entwurf>.zip` (nicht im Git).
+   - Ändern sich Stationen oder Koordinaten: `node werkzeuge/kartenbilder.mjs` erzeugt die Kartenbilder in `bilder/karten/`,
+     die vor dem Klick auf die Karte zu sehen sind (Besucher laden dabei nichts von OpenStreetMap).
 3. `gemeinsam/hof.js` ergänzt im Browser nur den Live-Status („Jetzt geöffnet bis …“), den heutigen Tag und den Countdown.
    Texte mit `data-hof-bis="2026-11-07"` verschwinden nach der Eröffnung automatisch, `data-hof-ab` erscheint ab dem Datum.
 

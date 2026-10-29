@@ -17,11 +17,12 @@
 .station-karte{min-height:280px;background:var(--st-karte,#ECEAE3);position:relative}
 
 .karte-gross{height:460px;border-radius:var(--st-radius,8px);overflow:hidden;background:var(--st-karte,#ECEAE3);border:1px solid var(--st-rand,#ddd)}
-.karte-aus{display:flex;align-items:center;justify-content:center}
-.karte-zu{padding:24px;text-align:center;max-width:340px}
+.karte-aus{display:flex;align-items:flex-end;justify-content:center;position:relative;background-size:cover;background-position:center}
+.karte-zu{margin:0 12px 34px;padding:14px 18px;text-align:center;max-width:360px;background:rgba(255,255,255,.93);border-radius:var(--st-radius,8px);box-shadow:0 6px 20px -8px rgba(0,0,0,.35)}
+.karte-quelle{position:absolute;right:0;bottom:0;font-size:.75rem;line-height:1;padding:4px 6px;background:rgba(255,255,255,.85);color:#333}
 .karte-knopf{font:inherit;font-weight:600;cursor:pointer;padding:11px 22px;border-radius:var(--st-knopf-radius,999px);border:0;background:var(--st-knopf,#333);color:var(--st-knopf-text,#fff)}
 .karte-knopf:hover{filter:brightness(1.12)}
-.karte-hinweis{font-size:.875rem;line-height:1.45;color:var(--st-leise,#666);margin:12px auto 0}
+.karte-hinweis{font-size:.8125rem;line-height:1.4;color:#4A4741;margin:8px auto 0}
 .leaflet-container{font:inherit;z-index:0}
 
 .legende{display:flex;flex-wrap:wrap;gap:8px 22px;margin:14px 0 0;padding:0;list-style:none;font-size:.92rem}
@@ -32,6 +33,8 @@
   .station{grid-template-columns:1fr}
   .station-bild{min-height:0;aspect-ratio:16/9;height:auto}
   .station-karte{min-height:240px}
+  .station-karte.karte-aus{min-height:300px}
+  .karte-zu{margin-bottom:28px}
   .karte-gross{height:360px}
 }
 

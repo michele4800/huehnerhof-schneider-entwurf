@@ -38,6 +38,7 @@
     el.dataset.gezeichnet = "1";
     el.innerHTML = "";
     el.classList.remove("karte-aus");
+    el.style.backgroundImage = "";
     el.classList.add("karte-an");
     if (!el.hasAttribute("role")) { el.setAttribute("role", "region"); el.setAttribute("aria-label", "Karte der Verkaufsstellen"); }
     const orte = orteFür(el.dataset.karte);
@@ -87,8 +88,11 @@
     document.querySelectorAll("[data-karte]:not([data-gezeichnet]):not([data-platzhalter])").forEach(el => {
       el.dataset.platzhalter = "1";
       el.classList.add("karte-aus");
-      el.innerHTML = `<div class="karte-zu"><button type="button" class="karte-knopf">Karte anzeigen</button>
-        <p class="karte-hinweis">Beim Anzeigen werden Kartendaten von OpenStreetMap geladen. Dabei wird deine IP-Adresse an deren Server übertragen.</p></div>`;
+      // Vorschaubild liegt auf dem eigenen Server (werkzeuge/kartenbilder.mjs) – vor dem Klick geht nichts an OpenStreetMap
+      el.style.backgroundImage = `url("${BASIS}../bilder/karten/${el.dataset.karte.replace(/,/g, "-")}.webp")`;
+      el.innerHTML = `<div class="karte-zu"><button type="button" class="karte-knopf">Karte bewegen und zoomen</button>
+        <p class="karte-hinweis">Dabei werden Kartendaten von OpenStreetMap geladen und deine IP-Adresse an deren Server übertragen.</p></div>
+        <span class="karte-quelle">© OpenStreetMap-Mitwirkende</span>`;
       el.querySelector("button").addEventListener("click", () => { merken(); alleZeichnen(el); });
     });
     if (erlaubt()) alleZeichnen();
