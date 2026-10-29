@@ -1,0 +1,206 @@
+/* Entwurf 4: Plakat, Rundbögen und Schrift aus „Eröffnung“, erzählende Kapitel und Serifen-Überschriften aus „Erzählend“ */
+:root{
+  --papier:#F3EFE6; --papier-2:#EAE3D5; --weiss:#FFFDF8; --holz:#EBD9BC; --taupe:#6F6254; --tinte:#3B332B; --leise:#6E6357; --pille:#7A7462; --linie:#D9D0C0;
+  --fassade:#2E3430; --holz-tief:#8A6437;
+  --sans:"Jost", "Century Gothic", system-ui, sans-serif; --serif:"Instrument Serif", Georgia, serif; --schrift:"Allura", cursive;
+  --st-flaeche:var(--weiss); --st-rand:var(--linie); --st-radius:0; --st-leise:var(--leise); --st-text:var(--tinte); --st-karte:var(--papier-2); --st-knopf:var(--taupe); --st-knopf-radius:0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section{scroll-margin-top:76px}
+body{margin:0;background:var(--papier);color:var(--tinte);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--taupe);outline-offset:4px}
+.bau :focus-visible,.fuss :focus-visible{outline-color:var(--holz)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--weiss);padding:8px 12px;z-index:99}
+h1,h2{font-family:var(--serif);font-weight:400;color:var(--tinte);margin:0;line-height:1.04}
+h2{font-size:clamp(2.4rem,5vw,4rem);max-width:15ch}
+h1 em,h2 em{color:var(--holz-tief)}
+h3{font-weight:400;font-size:1.1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--taupe);margin:0;line-height:1.2}
+p{margin:0 0 1em;max-width:60ch}
+.kapitel{font-size:1rem;color:var(--holz-tief);margin:0 0 14px;font-weight:500}
+.schrift{font-family:var(--schrift);font-weight:400;color:var(--taupe)}
+.pille{display:inline-block;background:var(--pille);color:var(--weiss);padding:8px 26px;letter-spacing:.2em;text-transform:uppercase;font-size:.95rem}
+.trenner{display:flex;align-items:center;gap:18px;justify-content:center;color:var(--taupe);margin:0 auto 20px;max-width:620px}
+.trenner::before,.trenner::after{content:"";height:1px;background:var(--taupe);flex:1;opacity:.55;min-width:30px}
+.trenner h2,.trenner h1{text-align:center;max-width:none}
+.unter{text-align:center;margin:0 auto 44px;color:var(--leise)}
+.knopf{display:inline-block;padding:13px 28px;border:1px solid var(--taupe);color:var(--taupe);text-decoration:none;letter-spacing:.16em;text-transform:uppercase;font-size:.85rem;transition:background .2s,color .2s}
+.knopf:hover,.knopf.voll{background:var(--taupe);color:var(--weiss)}
+.knopf.voll:hover{background:var(--tinte)}
+
+/* Kopf */
+.kopf{position:sticky;top:0;z-index:20;background:rgba(243,239,230,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--linie)}
+.kopf .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.marke{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marke img{width:52px}
+.marke span{color:var(--taupe);letter-spacing:.3em;text-transform:uppercase;font-size:1rem}
+.nav{display:flex;gap:28px;align-items:center}
+.nav a{text-decoration:none;font-size:.875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe)}
+.nav a:hover,.nav a[aria-current=page]{text-decoration:underline;text-underline-offset:6px}
+.menue{display:none;background:none;border:1px solid var(--taupe);color:var(--taupe);font:400 .8rem var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:9px 14px}
+
+/* Hero als Plakat */
+.hero{padding:56px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.plakat{text-align:center}
+.plakat h1{margin:0}
+.plakat .logo{width:min(320px,70%);margin:0 auto 34px}
+.plakat .wort{font-size:clamp(2.3rem,5vw,4rem);letter-spacing:.2em;margin-right:-.2em;text-transform:uppercase;color:var(--taupe);font-weight:300}
+.plakat .datum{font-size:clamp(1.05rem,1.8vw,1.35rem);letter-spacing:.24em;text-transform:uppercase;color:var(--taupe);margin:14px auto 18px;max-width:none}
+.plakat .schrift{font-size:clamp(2.2rem,4vw,3rem);margin:30px 0 8px}
+.plakat .tage{font-size:.95rem;color:var(--leise);letter-spacing:.06em;margin:0 auto}
+.bogen{border-radius:999px 999px 6px 6px;overflow:hidden;background:var(--papier-2)}
+.bogen img{width:100%;height:100%;object-fit:cover}
+.hero .bogen{aspect-ratio:4/5;max-width:470px;justify-self:center;width:100%;box-shadow:0 30px 50px -30px rgba(59,51,43,.45)}
+.seitenkopf{padding:72px 0 48px}
+.seitenkopf h1{font-size:clamp(2.8rem,6vw,5rem);max-width:14ch}
+.seitenkopf p:not(.kapitel){margin:22px 0 28px;color:var(--leise);font-size:1.15rem;max-width:48ch}
+.seitenkopf .bogen{aspect-ratio:1/1;max-width:440px;justify-self:center;width:100%}
+
+.abschnitt{padding:96px 0}
+.abschnitt.weiss{background:var(--weiss)}
+.abschnitt.holz{background:var(--holz)}
+
+/* Special */
+.special{display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center;max-width:760px;margin:0 auto;text-align:center}
+.special .strich{width:1px;height:140px;background:var(--taupe);opacity:.5}
+.special svg{width:84px;height:84px;margin:0 auto 14px;stroke:var(--taupe);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.special .preis{font-size:2.4rem;font-weight:300;color:var(--taupe);line-height:1;margin:6px 0 0}
+
+/* Öffnungszeiten */
+.zeiten{max-width:620px;margin-inline:auto;text-align:center}
+.zeiten table{width:100%;border-collapse:collapse;font-size:1.15rem}
+.zeiten table,.zeiten tbody,.zeiten tr,.zeiten th,.zeiten td{display:block;text-align:center;font-weight:400}
+.zeiten tr{padding:16px 0;border-bottom:1px solid rgba(111,98,84,.35)}
+.zeiten th{margin-bottom:4px;letter-spacing:.14em;text-transform:uppercase;font-size:.9rem;color:var(--taupe)}
+.zeiten td{font-family:var(--serif);font-size:1.7rem;line-height:1.2}
+.zeiten p{margin-inline:auto}
+.zeiten .klein{font-size:.95rem;color:var(--tinte);margin:22px auto 26px}
+
+/* Erzählende Blöcke */
+.zwei{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.zwei.umgekehrt>:first-child{order:2}
+.paar{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.paar .bogen{aspect-ratio:3/4}
+.paar .bogen:last-child{margin-top:60px}
+.sortiment{columns:2;gap:32px;padding:0;margin:24px 0 0;list-style:none}
+.sortiment li{padding:7px 0;border-bottom:1px solid var(--linie);break-inside:avoid}
+.zwei .knopf{margin-top:8px}
+
+/* Galerie */
+.galerie{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.galerie figure{margin:0}
+.galerie .bogen{aspect-ratio:3/4}
+.galerie figcaption{text-align:center;margin-top:16px;color:var(--leise);font-size:.98rem;padding:0 8px}
+
+/* Teaser zu den Unterseiten */
+.teaser{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.teaser a{display:grid;grid-template-columns:42% 1fr;background:var(--weiss);border:1px solid var(--linie);text-decoration:none;min-height:240px}
+.teaser img{width:100%;height:100%;object-fit:cover}
+.teaser div{padding:26px 26px 24px;display:flex;flex-direction:column}
+.teaser h3{font-family:var(--serif);font-size:2rem;letter-spacing:0;text-transform:none;color:var(--tinte)}
+.teaser p{color:var(--leise);font-size:.98rem;margin:12px 0 18px}
+.teaser .mehr{margin-top:auto;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe);text-decoration:underline;text-underline-offset:6px}
+.teaser a:hover{border-color:var(--taupe)}
+.teaser a:hover h3{color:var(--holz-tief)}
+
+/* Finder (Karten) */
+.finder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.ort{background:var(--weiss);border:1px solid var(--linie);display:flex;flex-direction:column;overflow:hidden}
+.ort.hervor{border-color:var(--taupe)}
+.ort-bild{aspect-ratio:3/2;object-fit:cover;width:100%;height:auto}
+.ort-text{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.ort-status{display:flex;align-items:center;gap:8px;font-size:.88rem;margin:0 0 8px;color:var(--leise)}
+.ort.ist-offen .ort-status{color:#4F6B2F;font-weight:500}
+.punkt{width:9px;height:9px;border-radius:50%;background:#C9BBA7;flex:none}
+.punkt.offen{background:#5B7F34;box-shadow:0 0 0 4px rgba(91,127,52,.16)}
+.ort-name,.station-name{font-family:var(--serif);font-size:1.7rem;letter-spacing:0;text-transform:none;color:var(--tinte)}
+.ort.hervor .ort-name{color:var(--holz-tief)}
+.ort-adresse{color:var(--leise);font-size:.92rem;margin:4px 0 12px}
+.ort-zeiten{font-size:.92rem;margin:auto 0 0;padding-top:12px;border-top:1px solid var(--linie)}
+.station-name{font-size:2.2rem}
+.station-route{font-size:.875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--taupe)}
+.woche{margin-top:56px;overflow-x:auto}
+.woche table{border-collapse:collapse;width:100%;min-width:760px;font-size:.88rem;background:var(--weiss)}
+.woche caption{text-align:left;padding:0 0 14px;font-family:var(--serif);font-size:1.8rem;color:var(--tinte)}
+.woche th,.woche td{padding:12px 8px;text-align:center;border-bottom:1px solid var(--linie);font-weight:400}
+.woche th[scope=row]{text-align:left;padding-left:16px;color:var(--taupe)}
+.woche thead th{color:var(--leise)}
+.woche .heute{background:var(--papier-2)}
+.woche thead th.heute{color:var(--tinte);font-weight:500}
+.woche small{display:block;line-height:1.35}
+.ei-mark{display:inline-block;width:10px;height:13px;border-radius:50%/60% 60% 40% 40%;background:var(--pille);margin-bottom:4px}
+.zu{color:var(--leise)}
+
+/* Chronik: Zeitstrahl mit Rundbögen auf dem dunklen Grün der Fassade */
+.bau{background:var(--fassade);color:#E7E5DE;padding:90px 0 110px}
+.chronik{list-style:none;margin:0 auto;padding:0;max-width:960px;position:relative}
+.chronik::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:#566059}
+.eintrag{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:30px 0;position:relative}
+.eintrag::after{content:"";position:absolute;left:calc(50% - 6px);top:50%;width:12px;height:12px;border-radius:50%;background:var(--holz);box-shadow:0 0 0 6px var(--fassade)}
+.eintrag:nth-child(even) .eintrag-text{order:2}
+.eintrag .wann{font-family:var(--serif);font-size:1.6rem;line-height:1.1;color:var(--holz);margin:0 0 6px}
+.eintrag h3{color:#fff;margin-bottom:10px}
+.eintrag p{font-size:.98rem}
+.eintrag-text p:last-child{margin:0;color:#C9CBC2}
+.eintrag .bogen{aspect-ratio:4/3;background:#3A413C}
+.eintrag .ohne-bild{width:150px;height:150px;justify-self:center;display:grid;place-items:center;border:1px solid #566059;border-radius:50%}
+.eintrag .ohne-bild svg{width:70px;stroke:var(--holz);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.eintrag.ziel .wann{color:#fff}
+.eintrag.ziel h3{font-family:var(--serif);font-size:3rem;letter-spacing:0;text-transform:none;color:var(--holz)}
+
+/* Kontakt */
+.kontakt .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
+.kontakt a.gross{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);text-decoration:none;display:block;line-height:1.15;overflow-wrap:anywhere}
+.kontakt a.gross.klein{font-size:clamp(1.3rem,2.4vw,1.9rem)}
+.kontakt a.gross:hover{color:var(--holz-tief)}
+.kontakt .schrift{font-size:clamp(2.2rem,4vw,3rem);margin:28px 0 0}
+.weiter{text-align:center}
+.weiter p{margin-inline:auto}
+.weiter .schrift{font-size:clamp(2.4rem,5vw,3.4rem);margin:40px auto 0}
+.fuss{background:var(--fassade);color:#B9BCB3;padding:40px 0 56px;font-size:.9rem}
+.fuss .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.fuss-titel{color:#fff}
+.entwurf{position:fixed;left:16px;bottom:16px;z-index:30;background:var(--taupe);color:var(--weiss);font-size:.875rem;padding:6px 12px;text-decoration:none;letter-spacing:.06em}
+
+/* Impressum / Datenschutz */
+.rechtliches h1{font-size:clamp(2.6rem,5vw,3.8rem);margin-bottom:24px}
+.rechtliches h2{font-family:var(--sans);font-size:1.15rem;font-weight:500;max-width:none;margin:32px 0 8px}
+
+@media (max-width:900px){
+  .nav{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:20px;background:var(--papier);padding:24px;border-bottom:1px solid var(--linie)}
+  .nav.auf{display:flex}
+  .menue{display:block}
+  .hero{padding:36px 0 64px}
+  .hero .wrap,.zwei,.fuss .wrap,.teaser,.kontakt .wrap{grid-template-columns:1fr}
+  .zwei.umgekehrt>:first-child{order:0}
+  .hero .bogen,.seitenkopf .bogen{max-width:340px}
+  .galerie{grid-template-columns:1fr 1fr}
+  .galerie figure:last-child{grid-column:span 2;max-width:60%;justify-self:center}
+  .abschnitt,.bau{padding:64px 0}
+  .seitenkopf{padding:48px 0 32px}
+  .special{grid-template-columns:1fr;gap:28px}
+  .special .strich{width:120px;height:1px;margin:0 auto}
+  .chronik::before{left:6px}
+  .eintrag{grid-template-columns:1fr;gap:18px;padding-left:34px}
+  .eintrag::after{left:0;top:40px}
+  .eintrag:nth-child(even) .eintrag-text{order:0}
+  .eintrag .ohne-bild{justify-self:start;width:110px;height:110px}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  .marke span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .plakat .wort{letter-spacing:.12em;margin-right:-.12em}
+  h1,h2{hyphens:auto;overflow-wrap:break-word}
+  .trenner{gap:10px}
+  .trenner::before,.trenner::after{min-width:12px}
+  .galerie{grid-template-columns:1fr}
+  .galerie figure:last-child{grid-column:auto;max-width:none}
+  .sortiment{columns:1}
+  .teaser a{grid-template-columns:1fr}
+  .teaser img{aspect-ratio:16/9;height:auto}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.knopf{transition:none}}

@@ -1,11 +1,11 @@
 # Hühnerhof Schneider – Website-Entwürfe
 
-Drei livegangfertige Entwürfe für Schneiders Hofladen & Hofcafé / Hühnerhof Schneider in Deckenpfronn.
+Vier livegangfertige Entwürfe für Schneiders Hofladen & Hofcafé / Hühnerhof Schneider in Deckenpfronn.
 Reines HTML/CSS/JS, keine Cookies, keine Anfragen an Dritte (Karten erst nach Klick).
 
 **`noindex` ist absichtlich noch gesetzt** – erst entfernen, wenn der Hof die Freigabe gibt (siehe unten).
 
-## Aufbau (in allen drei Entwürfen gleich)
+## Aufbau (in allen Entwürfen gleich)
 
 | Seite | Inhalt |
 |---|---|
@@ -14,7 +14,7 @@ Reines HTML/CSS/JS, keine Cookies, keine Anfragen an Dritte (Karten erst nach Kl
 | `geschichte.html` | Unsere Geschichte: Chronik mit Quellen |
 | `impressum.html`, `datenschutz.html` | Entwürfe – vor Livegang rechtlich prüfen |
 
-Entwürfe: `eroeffnung/` (Stil der neuen Posts), `hofbus/` (kräftig), `hofgeschichte/` (Magazin). Übersicht: `index.html`.
+Entwürfe: `eroeffnung/` (Stil der neuen Posts), `hofbus/` (kräftig), `hofgeschichte/` (Magazin), `kombi/` (Mischung aus 1 und 3). Übersicht: `index.html`.
 
 ## So wird gepflegt
 

@@ -14,7 +14,7 @@ import html, json, os, re, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = json.load(open(os.path.join(ROOT, "daten.json"), encoding="utf-8"))
-ENTWÜRFE = ["eroeffnung", "hofbus", "hofgeschichte"]
+ENTWÜRFE = ["eroeffnung", "hofbus", "hofgeschichte", "kombi"]
 VORSCHAU = "https://michele4800.github.io/huehnerhof-schneider-entwurf/{e}/"
 LIVE = "https://www.huehnerhof-schneider.de/"
 TAGE = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"]
@@ -203,7 +203,7 @@ def strukturdaten(seite, basis):
                                     "openingHoursSpecification": oh_specs(o)} for o in orte("bus,markt")]})
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1)
 
-FARBE = {"eroeffnung": "#F3EFE6", "hofbus": "#3D4718", "hofgeschichte": "#FBFAF7"}
+FARBE = {"eroeffnung": "#F3EFE6", "hofbus": "#3D4718", "hofgeschichte": "#FBFAF7", "kombi": "#F3EFE6"}
 def kopf(seite, entwurf, basis):
     titel, beschr = SEITEN[seite]
     url = basis + ("" if seite == "index.html" else seite)

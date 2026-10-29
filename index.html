@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Website-Entwürfe Hühnerhof Schneider</title>
-<meta name="description" content="Drei Entwürfe für die neue Website von Hühnerhof Schneider und Schneiders Hofladen & Hofcafé in Deckenpfronn – mit Auswahl und Änderungswünschen.">
+<meta name="description" content="Vier Entwürfe für die neue Website von Hühnerhof Schneider und Schneiders Hofladen & Hofcafé in Deckenpfronn – mit Auswahl und Änderungswünschen.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="bilder/favicon-schneiders.png">
@@ -26,7 +26,7 @@ header p,.einleitung{color:var(--leise);max-width:64ch;margin:18px 0 0;font-size
 .schritte{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0 0;padding:0}
 .schritte li{counter-increment:s;background:#fff;border:1px solid var(--linie);border-radius:10px;padding:16px 18px 16px 58px;position:relative}
 .schritte li::before{content:counter(s);position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--text);color:#fff;display:grid;place-items:center;font-weight:700}
-.liste{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:40px 0}
+.liste{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:40px 0}
 .karte{display:flex;flex-direction:column;text-decoration:none;color:inherit;border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--linie);transition:transform .15s,box-shadow .15s}
 .karte:hover{transform:translateY(-3px);box-shadow:0 18px 30px -18px rgba(0,0,0,.35)}
 .bild{position:relative;aspect-ratio:4/3;overflow:hidden}
@@ -44,6 +44,10 @@ header p,.einleitung{color:var(--leise);max-width:64ch;margin:18px 0 0;font-size
 .v1 .probe b{font:300 1.6rem "Jost",sans-serif;letter-spacing:.24em;text-transform:uppercase}
 .v1 .probe i{font:400 1.8rem "Allura",cursive;font-style:normal}
 .v2 .probe b{font:800 2.2rem/0.95 "Barlow Condensed",sans-serif;text-transform:uppercase;display:block}
+.v4 .bild{background:#EBD9BC}
+.v4 .probe{background:none;top:0;display:flex;align-items:flex-end;padding:16% 16% 0}
+.v4 .probe .bogen4{width:100%;height:100%;border-radius:999px 999px 0 0;overflow:hidden}
+.v4 .probe .bogen4 img{width:100%;height:100%;object-fit:cover}
 .v3 .probe b{font:400 2.1rem/1 "Instrument Serif",serif;display:block}
 
 /* Rückmeldung */
@@ -60,8 +64,8 @@ header p,.einleitung{color:var(--leise);max-width:64ch;margin:18px 0 0;font-size
 <body>
 <header class="wrap">
   <img src="bilder/logo-schneiders.webp" alt="Schneiders Hofladen & Hofcafé" width="640" height="399">
-  <h1>Drei Entwürfe für die neue Website</h1>
-  <p>Für Hühnerhof Schneider und Schneiders Hofladen &amp; Hofcafé in Deckenpfronn. Alle drei haben denselben Aufbau: Auf der Startseite stehen Hofladen und Hofcafé, Hofbus und Wochenmärkte haben eine eigene Seite mit Zeiten und Karte, die Geschichte ein eigenes Kapitel.</p>
+  <h1>Vier Entwürfe für die neue Website</h1>
+  <p>Für Hühnerhof Schneider und Schneiders Hofladen &amp; Hofcafé in Deckenpfronn. Alle haben denselben Aufbau: Auf der Startseite stehen Hofladen und Hofcafé, Hofbus und Wochenmärkte haben eine eigene Seite mit Zeiten und Karte, die Geschichte ein eigenes Kapitel.</p>
   <ol class="schritte">
     <li><strong>Anschauen.</strong> Klickt euch durch die Entwürfe – am besten auch auf dem Handy.</li>
     <li><strong>Anmelden und notieren.</strong> Auf jeder Seite unten rechts auf „Wünsche“ – direkt zur Seite eintragen.</li>
@@ -70,7 +74,7 @@ header p,.einleitung{color:var(--leise);max-width:64ch;margin:18px 0 0;font-size
 </header>
 
 <main class="wrap">
-  <h2 class="nur-vorleser">Die drei Entwürfe</h2>
+  <h2 class="nur-vorleser">Die vier Entwürfe</h2>
   <div class="liste">
     <a class="karte v1" href="eroeffnung/">
       <div class="bild"><div class="probe"><img src="bilder/logo-schneiders.webp" alt=""><b>Eröffnung</b><i>Wir freuen uns auf euch!</i></div></div>
@@ -102,6 +106,15 @@ header p,.einleitung{color:var(--leise);max-width:64ch;margin:18px 0 0;font-size
         <h3>3. Erzählend</h3>
         <p>Ruhig erzählt wie ein Magazin, in den Holztönen der Schindeln und dem dunklen Grün der Fassade.</p>
         <div class="farben" aria-hidden="true"><span style="background:#FBFAF7"></span><span style="background:#EBD9BC"></span><span style="background:#2E3430"></span><span style="background:#936B3D"></span></div>
+        <span class="los">Entwurf ansehen</span>
+      </div>
+    </a>
+    <a class="karte v4" href="kombi/">
+      <div class="bild"><div class="probe"><div class="bogen4"><img alt="" loading="lazy" src="bilder/neubau-innen-640.webp" width="640" height="800"></div></div></div>
+      <div class="inhalt">
+        <h3>4. Eröffnung, erzählt</h3>
+        <p>Die Mischung aus 1 und 3: Plakat, Logo und Rundbögen der Eröffnung, dazu große Serifen-Überschriften und Kapitel wie im Magazin, die Chronik im Grün der Fassade.</p>
+        <div class="farben" aria-hidden="true"><span style="background:#F3EFE6"></span><span style="background:#6F6254"></span><span style="background:#EBD9BC"></span><span style="background:#2E3430"></span></div>
         <span class="los">Entwurf ansehen</span>
       </div>
     </a>
