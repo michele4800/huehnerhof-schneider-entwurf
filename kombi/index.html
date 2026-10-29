@@ -197,10 +197,10 @@
         <p class="datum">Mahden 1 · Deckenpfronn</p>
         <span class="pille">Mi Ruhetag</span>
       </div>
-      <p class="schrift">Wir freuen uns auf euch!</p>
+      <p class="schrift"><!-- kf:gruss art="text" titel="Gruß (oben und unten)" -->Wir freuen uns auf euch!<!-- /kf:gruss --></p>
       <p class="tage" data-hof-countdown hidden>Noch <span data-hof="tage">–</span> <span data-hof="tage-wort">Tage</span>. Mahden 1, Deckenpfronn</p>
     </div>
-    <div class="bogen"><img fetchpriority="high" alt="Der neue Hofladen aus Holz mit Außentreppe zum Obergeschoss" src="../bilder/neubau-aussen.webp" srcset="../bilder/neubau-aussen-640.webp 640w, ../bilder/neubau-aussen.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw" width="1200" height="747"></div>
+    <div class="bogen"><!-- kf:hero-foto art="bild" titel="Großes Foto oben" --><img fetchpriority="high" alt="Der neue Hofladen aus Holz mit Außentreppe zum Obergeschoss" src="../bilder/neubau-aussen.webp" srcset="../bilder/neubau-aussen-640.webp 640w, ../bilder/neubau-aussen.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw" width="1200" height="747"><!-- /kf:hero-foto --></div>
   </div>
 </section>
 
@@ -211,32 +211,37 @@
     <div class="special">
       <div>
         <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 8h24l-3 22a9 9 0 0 1-18 0z"/><path d="M32 39v15M23 56h18"/><path d="M22 20h20"/><circle cx="37" cy="15" r="2"/><path d="M44 8l6-4"/></svg>
-        <h3>Aperol Spritz</h3>
-        <p class="preis">5 €</p>
+        <h3><!-- kf:special-1 art="text" titel="Special 1" -->Aperol Spritz<!-- /kf:special-1 --></h3>
+        <p class="preis"><!-- kf:special-1-preis art="text" titel="Preis Special 1" -->5 €<!-- /kf:special-1-preis --></p>
       </div>
       <span class="strich" aria-hidden="true"></span>
       <div>
         <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 40c0-10 8-16 24-16s24 6 24 16c0 4-3 6-7 6H15c-4 0-7-2-7-6z"/><path d="M14 40c2-6 9-9 18-9s16 3 18 9"/><ellipse cx="30" cy="20" rx="10" ry="7"/><circle cx="30" cy="20" r="3.5"/></svg>
-        <h3>Spiegeleibrot</h3>
+        <h3><!-- kf:special-2 art="text" titel="Special 2" -->Spiegeleibrot<!-- /kf:special-2 --></h3>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="abschnitt neues" id="neues" aria-labelledby="neues-titel">
+  <div class="wrap">
+    <p class="kapitel">Aktuell</p>
+    <h2 id="neues-titel">Neues vom Hof</h2>
+    <!-- kf:neues art="neuigkeiten" titel="Neuigkeiten" ebene="3" --><p class="kf-leer">Gerade gibt es keine Neuigkeiten.</p><!-- /kf:neues -->
   </div>
 </section>
 
 <section class="abschnitt" aria-labelledby="laden-titel">
   <div class="wrap zwei">
     <div class="paar">
-      <div class="bogen"><img alt="Gestapelte Paletten mit frischen braunen Eiern" loading="lazy" src="../bilder/eier-paletten.webp" srcset="../bilder/eier-paletten-640.webp 640w, ../bilder/eier-paletten.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" width="1200" height="660"></div>
-      <div class="bogen"><img alt="Flaschen Eierlikör aus eigener Herstellung" loading="lazy" src="../bilder/eierlikoer.webp" srcset="../bilder/eierlikoer-640.webp 640w, ../bilder/eierlikoer.webp 640w" sizes="(max-width: 900px) 50vw, 25vw" width="640" height="705"></div>
+      <div class="bogen"><!-- kf:laden-foto-1 art="bild" titel="Foto Hofladen links" --><img alt="Gestapelte Paletten mit frischen braunen Eiern" loading="lazy" src="../bilder/eier-paletten.webp" srcset="../bilder/eier-paletten-640.webp 640w, ../bilder/eier-paletten.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" width="1200" height="660"><!-- /kf:laden-foto-1 --></div>
+      <div class="bogen"><!-- kf:laden-foto-2 art="bild" titel="Foto Hofladen rechts" --><img alt="Flaschen Eierlikör aus eigener Herstellung" loading="lazy" src="../bilder/eierlikoer.webp" srcset="../bilder/eierlikoer-640.webp 640w, ../bilder/eierlikoer.webp 640w" sizes="(max-width: 900px) 50vw, 25vw" width="640" height="705"><!-- /kf:laden-foto-2 --></div>
     </div>
     <div>
       <p class="kapitel">Im Hofladen</p>
-      <h2 id="laden-titel">Direkt von unserem Legehennen&shy;betrieb</h2>
-      <p style="margin-top:22px">Frische Eier und regionale Produkte – manches von unserem Hof, vieles von Erzeugern aus der Umgebung. So sah unser Sortiment bisher im Hofbus und auf den Märkten aus:</p>
-      <ul class="sortiment">
-        <li>Eier</li><li>Eierlikör aus eigener Herstellung</li><li>Äpfel und Birnen vom eigenen Baum</li><li>Nudeln, Linsen und Mehl</li>
-        <li>Honig und Marmelade</li><li>Wurst, Fleisch und Käse</li><li>Obst und Gemüse</li><li>Brot, Wein und Eis</li>
-      </ul>
+      <h2 id="laden-titel"><!-- kf:laden-titel art="text" titel="Überschrift Hofladen" -->Direkt von unserem Legehennen&shy;betrieb<!-- /kf:laden-titel --></h2>
+      <p style="margin-top:22px"><!-- kf:laden-text art="text" titel="Text Hofladen" -->Frische Eier und regionale Produkte – manches von unserem Hof, vieles von Erzeugern aus der Umgebung. So sah unser Sortiment bisher im Hofbus und auf den Märkten aus:<!-- /kf:laden-text --></p>
+      <ul class="sortiment"><!-- kf:sortiment art="mehrzeilig" titel="Sortiment (je Zeile ein Punkt)" --><li>Eier</li><li>Eierlikör aus eigener Herstellung</li><li>Äpfel und Birnen vom eigenen Baum</li><li>Nudeln, Linsen und Mehl</li><li>Honig und Marmelade</li><li>Wurst, Fleisch und Käse</li><li>Obst und Gemüse</li><li>Brot, Wein und Eis</li><!-- /kf:sortiment --></ul>
     </div>
   </div>
 </section>
@@ -244,13 +249,13 @@
 <section class="abschnitt weiss" aria-labelledby="cafe-titel">
   <div class="wrap zwei umgekehrt">
     <div class="paar">
-      <div class="bogen"><img alt="Heller Innenraum aus Holz mit großen Fenstern" loading="lazy" src="../bilder/neubau-innen.webp" srcset="../bilder/neubau-innen-640.webp 640w, ../bilder/neubau-innen.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" width="1200" height="1501"></div>
-      <div class="bogen"><img alt="Lange Wand aus Holzschindeln" loading="lazy" src="../bilder/schindelwand.webp" srcset="../bilder/schindelwand-640.webp 640w, ../bilder/schindelwand.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" width="1200" height="1088"></div>
+      <div class="bogen"><!-- kf:cafe-foto-1 art="bild" titel="Foto Hofcafé links" --><img alt="Heller Innenraum aus Holz mit großen Fenstern" loading="lazy" src="../bilder/neubau-innen.webp" srcset="../bilder/neubau-innen-640.webp 640w, ../bilder/neubau-innen.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" width="1200" height="1501"><!-- /kf:cafe-foto-1 --></div>
+      <div class="bogen"><!-- kf:cafe-foto-2 art="bild" titel="Foto Hofcafé rechts" --><img alt="Lange Wand aus Holzschindeln" loading="lazy" src="../bilder/schindelwand.webp" srcset="../bilder/schindelwand-640.webp 640w, ../bilder/schindelwand.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" width="1200" height="1088"><!-- /kf:cafe-foto-2 --></div>
     </div>
     <div>
       <p class="kapitel">Im Hofcafé</p>
-      <h2 id="cafe-titel">Auf einen Kaffee <em>am Hof</em></h2>
-      <p style="margin-top:22px">Viel Holz und große Fenster: Im neuen Haus haben wir Platz für ein Café geschaffen. Die Espressomaschine ist schon eingezogen.</p>
+      <h2 id="cafe-titel"><!-- kf:cafe-titel art="text" titel="Überschrift Hofcafé" -->Auf einen Kaffee <em>am Hof</em><!-- /kf:cafe-titel --></h2>
+      <p style="margin-top:22px"><!-- kf:cafe-text art="text" titel="Text Hofcafé" -->Viel Holz und große Fenster: Im neuen Haus haben wir Platz für ein Café geschaffen. Die Espressomaschine ist schon eingezogen.<!-- /kf:cafe-text --></p>
       <a class="knopf" href="geschichte.html">Wie das Haus entstanden ist</a>
     </div>
   </div>
@@ -286,7 +291,7 @@
         <div><h3>Unsere Geschichte</h3><p>Von der Blühwiese über den Hofbus bis zum neuen Haus aus Holz.</p><span class="mehr">Zur Chronik</span></div>
       </a>
     </div>
-    <p style="margin-top:40px;color:var(--leise)">Rund um die Uhr offen: unser SB-Lädle in der Calwer Straße 27/1. S'Lädle isch immer offa.</p>
+    <p style="margin-top:40px;color:var(--leise)"><!-- kf:sb-laedle art="text" titel="Satz zum SB-Lädle" -->Rund um die Uhr offen: unser SB-Lädle in der Calwer Straße 27/1. S'Lädle isch immer offa.<!-- /kf:sb-laedle --></p>
   </div>
 </section>
 
@@ -308,7 +313,7 @@
       <a class="gross klein" href="mailto:info@huehnerhof-schneider.de">info@huehnerhof-schneider.de</a>
       <p style="margin-top:14px"><a href="https://www.instagram.com/huehnerhof_schneider/" target="_blank" rel="noopener">@huehnerhof_schneider auf Instagram<span class="nur-vorleser"> (neues Fenster)</span></a></p>
       <p style="margin-top:22px;color:var(--leise)">SB-Lädle: Calwer Straße 27/1, 75392 Deckenpfronn</p>
-      <p class="schrift">Wir freuen uns auf euch!</p>
+      <p class="schrift"><!-- kf:gruss art="text" titel="Gruß (oben und unten)" -->Wir freuen uns auf euch!<!-- /kf:gruss --></p>
     </div>
     <div class="karte-gross" data-karte="hof"></div>
   </div>
