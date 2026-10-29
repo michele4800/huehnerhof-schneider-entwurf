@@ -1,0 +1,21 @@
+{
+  "_hinweis": "Welche Angaben aus daten.json der Hof im Editor (Reiter „Angaben“) selbst ändern darf. Der Wächter lehnt alles andere ab. Neue Orte, Koordinaten und Bilder bleiben Sache der Agentur.",
+  "datei": "daten.json",
+  "felder": [
+    { "pfad": "betrieb.telefon_anzeige", "titel": "Telefon (so wie es auf der Seite steht)" },
+    { "pfad": "betrieb.telefon", "titel": "Telefon zum Anrufen (mit +49, ohne 0)" },
+    { "pfad": "betrieb.email", "titel": "E-Mail" },
+    { "pfad": "eroeffnung.special", "titel": "Special am Eröffnungstag" },
+    { "liste": "orte", "titel": "Orte und Öffnungszeiten", "name": "name", "felder": [
+      { "pfad": "name", "titel": "Name" },
+      { "pfad": "adresse", "titel": "Adresse" },
+      { "pfad": "zeiten", "titel": "Öffnungszeiten", "art": "woche" },
+      { "pfad": "notiz", "titel": "Hinweis (z. B. „Mittwoch Ruhetag“)" }
+    ] },
+    { "liste": "chronik", "titel": "Chronik (Seite „Geschichte“)", "name": "titel", "felder": [
+      { "pfad": "wann", "titel": "Wann" },
+      { "pfad": "titel", "titel": "Überschrift" },
+      { "pfad": "text", "titel": "Text" }
+    ] }
+  ]
+}
