@@ -1,6 +1,7 @@
 {
  "blume": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><circle cx=\"40\" cy=\"30\" r=\"7\"/><circle cx=\"40\" cy=\"16\" r=\"8\"/><circle cx=\"53\" cy=\"26\" r=\"8\"/><circle cx=\"49\" cy=\"41\" r=\"8\"/><circle cx=\"31\" cy=\"41\" r=\"8\"/><circle cx=\"27\" cy=\"26\" r=\"8\"/><path d=\"M40 47v28M40 64c-8-2-12-8-12-12M40 60c7-1 11-6 12-10\"/></svg>",
  "ei": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><path d=\"M40 8C26 8 16 32 16 46a24 24 0 0 0 48 0C64 32 54 8 40 8z\"/></svg>",
- "bus": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><rect x=\"8\" y=\"22\" width=\"58\" height=\"34\" rx=\"5\"/><path d=\"M14 30h46M66 34h6v16h-6\"/><circle cx=\"22\" cy=\"58\" r=\"6\"/><circle cx=\"52\" cy=\"58\" r=\"6\"/><path d=\"M20 30v14M32 30v14M44 30v14\"/></svg>",
+ "kaffeemaschine": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><rect x=\"14\" y=\"8\" width=\"52\" height=\"16\" rx=\"4\"/><path d=\"M20 24v44M60 24v44M10 68h60M36 24v8h8v-8\"/><path d=\"M30 46h20v8a10 10 0 0 1-20 0z\"/><path d=\"M50 48h3a4 4 0 0 1 0 8h-3\"/></svg>",
+ "bus":"<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><rect x=\"8\" y=\"22\" width=\"58\" height=\"34\" rx=\"5\"/><path d=\"M14 30h46M66 34h6v16h-6\"/><circle cx=\"22\" cy=\"58\" r=\"6\"/><circle cx=\"52\" cy=\"58\" r=\"6\"/><path d=\"M20 30v14M32 30v14M44 30v14\"/></svg>",
  "schindel": "<svg viewBox=\"0 0 80 80\" aria-hidden=\"true\"><path d=\"M10 20h60M10 38h60M10 56h60M20 20v18M35 20v18M50 20v18M65 20v18M12 38v18M27 38v18M42 38v18M57 38v18\"/><path d=\"M10 20a5 5 0 0 0 10 0M20 20a5 5 0 0 0 15 0M35 20a5 5 0 0 0 15 0M50 20a5 5 0 0 0 15 0\"/></svg>"
 }
