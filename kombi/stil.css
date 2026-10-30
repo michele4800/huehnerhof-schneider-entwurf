@@ -68,6 +68,9 @@ p{margin:0 0 1em;max-width:60ch}
 .special{display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center;max-width:760px;margin:0 auto;text-align:center}
 .special .strich{width:1px;height:140px;background:var(--taupe);opacity:.5}
 .special svg{width:84px;height:84px;margin:0 auto 14px;stroke:var(--taupe);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.special .zeichnung{display:block;margin:0 auto 14px;background:url(../bilder/special-icons.webp) no-repeat}
+.special .glas{width:80px;aspect-ratio:110/185;background-size:736% auto;background-position:5.7% 31%}
+.special .brot{width:130px;aspect-ratio:170/135;background-size:476% auto;background-position:62.5% 38%}
 .special .preis{font-size:2.4rem;font-weight:300;color:var(--taupe);line-height:1;margin:6px 0 0}
 
 /* Öffnungszeiten */
