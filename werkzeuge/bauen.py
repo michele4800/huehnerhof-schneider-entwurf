@@ -312,8 +312,8 @@ def pakete():
         shutil.copy(os.path.join(ROOT, ent, "stil.css"), z)
         if os.path.exists(os.path.join(ROOT, ent, "feed.xml")):  # Neuigkeiten aus dem Editor (RSS)
             shutil.copy(os.path.join(ROOT, ent, "feed.xml"), z)
-        for f in os.listdir(os.path.join(ROOT, ent)):  # Stile aus dem Editor (Baukasten), je Seite <name>.kf.css
-            if f.endswith(".kf.css"): shutil.copy(os.path.join(ROOT, ent, f), z)
+        for f in os.listdir(os.path.join(ROOT, ent)):  # aus dem Editor (Baukasten): Stile je Seite <name>.kf.css, Formular/Galerie-Skript
+            if f.endswith(".kf.css") or f == "kf-komponenten.js": shutil.copy(os.path.join(ROOT, ent, f), z)
         shutil.copytree(os.path.join(ROOT, "gemeinsam"), os.path.join(z, "gemeinsam"), ignore=shutil.ignore_patterns("anmerkung.js"))  # nur für die Vorschau
         shutil.copytree(os.path.join(ROOT, "bilder"), os.path.join(z, "bilder"))
         open(os.path.join(z, "sitemap.xml"), "w", encoding="utf-8").write(
