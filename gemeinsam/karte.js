@@ -42,7 +42,7 @@
     el.classList.add("karte-an");
     if (!el.hasAttribute("role")) { el.setAttribute("role", "region"); el.setAttribute("aria-label", "Karte der Verkaufsstellen"); }
     const orte = orteFür(el.dataset.karte);
-    // SB-Lädle und Hofbus Deckenpfronn stehen an derselben Adresse: nur ein Punkt
+    // Orte an derselben Adresse: nur ein Punkt
     const punkte = [];
     for (const o of orte) {
       const p = punkte.find(p => p.lat === o.lat && p.lon === o.lon);

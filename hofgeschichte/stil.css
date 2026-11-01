@@ -79,7 +79,7 @@ p{margin:0 0 1em;max-width:58ch}
 .teaser a:hover h3{color:var(--holz-tief)}
 
 /* Finder */
-.finder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px}
+.finder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
 .ort{display:flex;flex-direction:column}
 .ort-bild{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:4px}
 .ort-text{padding-top:14px;display:flex;flex-direction:column;flex:1;border-bottom:1px solid var(--linie);padding-bottom:16px}

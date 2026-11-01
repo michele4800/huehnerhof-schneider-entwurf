@@ -103,7 +103,7 @@ p{margin:0 0 1em;max-width:60ch}
 .teaser a:hover{border-color:var(--taupe)}
 
 /* Finder (Karten) */
-.finder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.finder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
 .ort{background:var(--weiss);border:1px solid var(--linie);display:flex;flex-direction:column;overflow:hidden}
 .ort.hervor{border-color:var(--taupe)}
 .ort-bild{aspect-ratio:3/2;object-fit:cover;width:100%;height:auto}
