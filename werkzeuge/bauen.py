@@ -37,6 +37,20 @@ SEITEN = {  # Titel ≤ 60, Beschreibung ≤ 160 Zeichen (wird geprüft)
 for t, d in SEITEN.values():
     assert len(t) <= 60 and len(d) <= 160, (t, len(t), len(d))
 
+# Ausgeblendete Seiten (daten.json „ausgeblendet“, z. B. ["kombi/unterwegs.html"]): bleiben in der Vorschau zum Weiterarbeiten,
+# sind dort aber nicht verlinkt; im Livegang fehlen sie ganz (Datei, Links, sitemap.xml, llms.txt).
+AUSBLENDBAR = ("unterwegs.html", "geschichte.html")
+AUS = D.get("ausgeblendet", [])
+for a in AUS:
+    assert a.count("/") == 1 and a.split("/")[0] in ENTWÜRFE and a.split("/")[1] in AUSBLENDBAR, f"daten.json ausgeblendet: {a}"
+def aus(ent): return [s for s in AUSBLENDBAR if f"{ent}/{s}" in AUS]
+VERSTECKT = ' hidden style="display:none!important" data-seite-aus'
+def links_verstecken(t, ent):  # umkehrbar: erst alle Markierungen weg, dann neu setzen
+    t = t.replace(VERSTECKT, "")
+    for s in aus(ent):
+        t = re.sub(r'<a(?=\s[^>]*\bhref="' + re.escape(s) + '")', lambda m: "<a" + VERSTECKT, t)
+    return t
+
 # ---------- Zeiten ----------
 def kurzzeit(s): return s.lstrip("0").replace(":00", "").replace(":", ".") if s != "00:00" else "0"
 def spanne(z): return " und ".join("–".join(kurzzeit(x) for x in t.split("-")) for t in z.split(",")) + " Uhr"
@@ -287,7 +301,7 @@ def main():
             open(os.path.join(ROOT, ent, name), "w", encoding="utf-8").write(rechtsseite(ent, name, inhalt))
         for seite in SEITEN:
             f = os.path.join(ROOT, ent, seite)
-            t = befüllen(open(f, encoding="utf-8").read(), seite, ent, VORSCHAU.format(e=ent))
+            t = links_verstecken(befüllen(open(f, encoding="utf-8").read(), seite, ent, VORSCHAU.format(e=ent)), ent)
             open(f, "w", encoding="utf-8").write(t)
     print("Seiten gebaut.")
     if "--ohne-paket" not in sys.argv: pakete()
@@ -295,11 +309,15 @@ def main():
 def pakete():
     ziel = os.path.join(ROOT, "livegang")
     shutil.rmtree(ziel, ignore_errors=True)
+    # Leere Ordner, die Windows/Drive-Sync gerade festhält, sind harmlos – alte Dateien nicht (z. B. eine inzwischen ausgeblendete Seite)
+    assert not any(fs for _, _, fs in os.walk(ziel)), "livegang/ ließ sich nicht leeren – Ordner schließen und neu bauen"
     for ent in ENTWÜRFE:
-        z = os.path.join(ziel, ent); os.makedirs(z)
-        for seite in SEITEN:
+        z = os.path.join(ziel, ent); os.makedirs(z, exist_ok=True)
+        sichtbar = [s for s in SEITEN if s not in aus(ent)]
+        for seite in sichtbar:
             t = open(os.path.join(ROOT, ent, seite), encoding="utf-8").read()
             t = befüllen(t, seite, ent, LIVE, pfad="")
+            t = re.sub(r"<li>\s*</li>", "", re.sub(r"<a" + re.escape(VERSTECKT) + r"[^>]*>.*?</a>", "", links_verstecken(t, ent), flags=re.S))
             t = re.sub(r"\.\./(bilder|gemeinsam)/", r"\1/", t)
             t = re.sub(r'\s*<a class="entwurf"[^>]*>.*?</a>', "", t)  # Entwurfs-Schild raus
             t = re.sub(r'\s*<script src="[^"]*kunden-feedback/feedback\.js"[^>]*></script>', "", t)  # Feedback-Widget nur in der Vorschau
@@ -310,18 +328,18 @@ def pakete():
             shutil.copy(os.path.join(ROOT, ent, "feed.xml"), z)
         for f in os.listdir(os.path.join(ROOT, ent)):  # aus dem Editor (Baukasten): Stile je Seite <name>.kf.css, Formular/Galerie-Skript
             if f.endswith(".kf.css") or f == "kf-komponenten.js": shutil.copy(os.path.join(ROOT, ent, f), z)
-        shutil.copytree(os.path.join(ROOT, "gemeinsam"), os.path.join(z, "gemeinsam"), ignore=shutil.ignore_patterns("anmerkung.js"))  # nur für die Vorschau
-        shutil.copytree(os.path.join(ROOT, "bilder"), os.path.join(z, "bilder"))
+        shutil.copytree(os.path.join(ROOT, "gemeinsam"), os.path.join(z, "gemeinsam"), ignore=shutil.ignore_patterns("anmerkung.js"), dirs_exist_ok=True)  # nur für die Vorschau
+        shutil.copytree(os.path.join(ROOT, "bilder"), os.path.join(z, "bilder"), dirs_exist_ok=True)
         open(os.path.join(z, "sitemap.xml"), "w", encoding="utf-8").write(
             '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-            + "".join(f"  <url><loc>{LIVE}{'' if s == 'index.html' else s}</loc></url>\n" for s in SEITEN) + "</urlset>\n")
+            + "".join(f"  <url><loc>{LIVE}{'' if s == 'index.html' else s}</loc></url>\n" for s in sichtbar) + "</urlset>\n")
         open(os.path.join(z, "robots.txt"), "w", encoding="utf-8").write(f"User-agent: *\nAllow: /\n\nSitemap: {LIVE}sitemap.xml\n")
-        open(os.path.join(z, "llms.txt"), "w", encoding="utf-8").write(llms())
+        open(os.path.join(z, "llms.txt"), "w", encoding="utf-8").write(llms(aus(ent)))
         open(os.path.join(z, ".htaccess"), "w", encoding="utf-8").write(HTACCESS)
         shutil.make_archive(os.path.join(ziel, f"livegang-{ent}"), "zip", z)
     print("Livegang-Pakete in livegang/ erstellt.")
 
-def llms():
+def llms(ohne=()):
     hof = D["orte"][0]
     zeilen = "\n".join(f"- {o['name']}, {o['adresse']}: {zeiten_text(o)}" for o in D["orte"])
     return f"""# {B['name']} – {L['name']}
@@ -338,9 +356,8 @@ def llms():
 
 ## Seiten
 - [Hofladen & Hofcafé]({LIVE}): Eröffnung, Öffnungszeiten, Sortiment, Anfahrt
-- [Hofbus & Wochenmärkte]({LIVE}unterwegs.html): alle Stationen mit Zeiten
-- [Unsere Geschichte]({LIVE}geschichte.html): Chronik des Betriebs
-"""
+""" + "".join(z for s, z in (("unterwegs.html", f"- [Hofbus & Wochenmärkte]({LIVE}unterwegs.html): alle Stationen mit Zeiten\n"),
+                                ("geschichte.html", f"- [Unsere Geschichte]({LIVE}geschichte.html): Chronik des Betriebs\n")) if s not in ohne)
 
 HTACCESS = """# Caching und Kompression (STRATO / Apache)
 <IfModule mod_expires.c>

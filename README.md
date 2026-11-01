@@ -20,6 +20,7 @@ Entwürfe: `eroeffnung/` (Stil der neuen Posts), `hofbus/` (kräftig), `hofgesch
 
 1. **Alle Fakten stehen in `daten.json`** (Adressen, Stationen mit Zeiten und Koordinaten, Eröffnung, Chronik mit Quellen).
    Die Symbole der Chronik (Feld `zeichen`) liegen in `gemeinsam/zeichen.json` (SVG, `viewBox="0 0 80 80"`, nur Linien) – neue Symbole dort ergänzen, nicht in `werkzeuge/`.
+   Seiten ausblenden: `"ausgeblendet": ["kombi/unterwegs.html"]` (nur `unterwegs.html`, `geschichte.html`). Sie bleiben in der Vorschau zum Weiterarbeiten, sind dort aber nicht verlinkt; im Livegang fehlen Datei, Links, sitemap.xml- und llms.txt-Eintrag.
 2. Danach im Projektordner: `python werkzeuge/bauen.py`
    - schreibt Stationen, Wochentabelle, Chronik, FAQ, Fußzeile, Canonical/Open Graph und Strukturdaten (JSON-LD) als
      **statisches HTML** in alle Seiten (zwischen `<!-- hof:… -->`-Markern – dort nichts von Hand ändern),
