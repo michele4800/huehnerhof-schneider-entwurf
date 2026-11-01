@@ -98,19 +98,6 @@
       "_quelle": "alte Website"
     },
     {
-      "id": "bus-gueltlingen",
-      "gruppe": "bus",
-      "name": "Hofbus Gültlingen",
-      "adresse": "Bushaltestelle Ortskern, Wildberg-Gültlingen",
-      "bild": "hofbus-schirm",
-      "lat": 48.64979,
-      "lon": 8.77389,
-      "zeiten": {
-        "5": "14:30-17:30"
-      },
-      "_quelle": "alte Website"
-    },
-    {
       "id": "markt-boeblingen",
       "gruppe": "markt",
       "name": "Wochenmarkt Böblingen",
