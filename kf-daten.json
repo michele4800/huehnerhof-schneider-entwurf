@@ -6,6 +6,9 @@
     { "pfad": "betrieb.telefon", "titel": "Telefon zum Anrufen (mit +49, ohne 0)" },
     { "pfad": "betrieb.email", "titel": "E-Mail" },
     { "pfad": "eroeffnung.special", "titel": "Special am Eröffnungstag" },
+    { "pfad": "ausgeblendet", "titel": "Ausgeblendete Seiten (Auge im Reiter „Seiten“)", "art": "seiten", "erlaubt": [
+      "eroeffnung/unterwegs.html", "eroeffnung/geschichte.html", "hofbus/unterwegs.html", "hofbus/geschichte.html",
+      "hofgeschichte/unterwegs.html", "hofgeschichte/geschichte.html", "kombi/unterwegs.html", "kombi/geschichte.html"] },
     { "liste": "orte", "titel": "Orte und Öffnungszeiten", "name": "name", "felder": [
       { "pfad": "name", "titel": "Name" },
       { "pfad": "adresse", "titel": "Adresse" },
