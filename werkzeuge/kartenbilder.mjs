@@ -47,3 +47,6 @@ for (const schluessel of KARTEN) {
   console.log(path.relative(ROOT, datei), Math.round(fs.statSync(datei).size / 1024) + " KB");
 }
 await browser.close();
+// Bilder entfernter Stationen löschen
+const gueltig = new Set(KARTEN.map(s => s.replace(/,/g, "-") + ".webp"));
+for (const f of fs.readdirSync(ziel)) if (f.endsWith(".webp") && !gueltig.has(f)) { fs.unlinkSync(path.join(ziel, f)); console.log("entfernt:", f); }

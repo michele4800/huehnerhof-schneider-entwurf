@@ -10,7 +10,7 @@ Was passiert:
   4. livegang/<entwurf>/        – fertiges Paket für das Wurzelverzeichnis von STRATO
                                   (mit sitemap.xml, robots.txt, llms.txt, .htaccess); nicht im Git
 """
-import html, json, os, re, shutil, sys
+import html, json, os, re, shutil, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = json.load(open(os.path.join(ROOT, "daten.json"), encoding="utf-8"))
@@ -291,6 +291,19 @@ def rechtsseite(entwurf, name, inhalt):
     rest = vorlage.split("</main>", 1)[1]
     return kopfteil + f'<main id="inhalt">\n<section class="abschnitt rechtliches"><div class="wrap">\n{inhalt}\n</div></section>\n</main>' + rest
 
+# Kartenbilder (bilder/karten/*.webp) nur neu erzeugen, wenn sich Stationen oder Koordinaten geändert haben –
+# sonst würde jeder Bau Kacheln bei OpenStreetMap laden. Schlägt es fehl (kein Netz), bleibt das alte Bild und der nächste Bau versucht es wieder.
+def kartenbilder():
+    stand = json.dumps([[o["id"], o["gruppe"], o["lat"], o["lon"]] for o in D["orte"]])
+    merker = os.path.join(ROOT, "bilder", "karten", "stand.json")
+    if os.path.exists(merker) and open(merker, encoding="utf-8").read() == stand: return
+    try:
+        subprocess.run(["node", os.path.join(ROOT, "werkzeuge", "kartenbilder.mjs")], cwd=ROOT, check=True, timeout=240, capture_output=True)
+    except Exception as f:
+        print("Kartenbilder nicht erneuert:", getattr(f, "stderr", b"").decode("utf-8", "replace")[-300:] or f); return
+    open(merker, "w", encoding="utf-8").write(stand)
+    print("Kartenbilder erneuert.")
+
 # ---------- Ablauf ----------
 def main():
     open(os.path.join(ROOT, "gemeinsam", "daten.js"), "w", encoding="utf-8").write(
@@ -303,6 +316,7 @@ def main():
             f = os.path.join(ROOT, ent, seite)
             t = links_verstecken(befüllen(open(f, encoding="utf-8").read(), seite, ent, VORSCHAU.format(e=ent)), ent)
             open(f, "w", encoding="utf-8").write(t)
+    kartenbilder()
     print("Seiten gebaut.")
     if "--ohne-paket" not in sys.argv: pakete()
 
