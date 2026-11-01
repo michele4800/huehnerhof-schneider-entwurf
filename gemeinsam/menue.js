@@ -34,3 +34,36 @@
   window.addEventListener("resize", pruefen);
   pruefen();
 })();
+
+// Speise- & Getränkekarte: Reiter „Speisen“/„Getränke“, Preis hinter „–“ rechtsbündig
+(function () {
+  const karte = document.querySelector(".speisekarte");
+  if (!karte) return;
+  karte.querySelectorAll(".karte-liste li").forEach(li => {
+    const m = li.textContent.match(/^(.*\S)\s+[–-]\s+(\S.*)$/);
+    if (!m) return;
+    const name = document.createElement("span"), punkte = document.createElement("span"), preis = document.createElement("span");
+    name.textContent = m[1]; preis.textContent = m[2];
+    punkte.className = "karte-punkte"; punkte.setAttribute("aria-hidden", "true"); preis.className = "karte-preis";
+    li.replaceChildren(name, punkte, preis);
+  });
+  const leiste = karte.querySelector(".karte-reiter");
+  if (!leiste) return;
+  const reiter = [...leiste.querySelectorAll('[role="tab"]')];
+  const zeigen = r => reiter.forEach(t => {
+    const an = t === r;
+    t.setAttribute("aria-selected", an); t.tabIndex = an ? 0 : -1;
+    document.getElementById(t.getAttribute("aria-controls")).hidden = !an;
+  });
+  reiter.forEach((t, i) => {
+    t.addEventListener("click", () => zeigen(t));
+    t.addEventListener("keydown", e => {
+      const n = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (!n) return;
+      const z = reiter[(i + n + reiter.length) % reiter.length];
+      zeigen(z); z.focus();
+    });
+  });
+  leiste.hidden = false; karte.classList.add("reiter");
+  zeigen(reiter[0]);
+})();

@@ -73,6 +73,20 @@ p{margin:0 0 1em;max-width:60ch}
 .special .brot{width:130px;aspect-ratio:170/135;background-size:476% auto;background-position:62.5% 38%}
 .special .preis{font-size:2.4rem;font-weight:300;color:var(--taupe);line-height:1;margin:6px 0 0}
 
+/* Speise- & Getränkekarte (Reiter per menue.js; ohne JS stehen beide Teile untereinander) */
+.speisekarte{max-width:620px;margin:0 auto}
+.karte-reiter{display:flex;justify-content:center;gap:12px;margin:0 0 32px}
+.karte-reiter button{background:none;border:1px solid var(--taupe);color:var(--taupe);font:400 .85rem var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:11px 26px;cursor:pointer;transition:background .2s,color .2s}
+.karte-reiter button:hover,.karte-reiter button[aria-selected="true"]{background:var(--taupe);color:var(--weiss)}
+.karte-teil h3{text-align:center;margin:0 0 18px}
+.karte-teil + .karte-teil{margin-top:40px}
+.speisekarte.reiter .karte-teil{margin-top:0}
+.speisekarte.reiter .karte-teil h3{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.karte-liste{list-style:none;margin:0;padding:0}
+.karte-liste li{display:flex;align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px solid var(--linie);font-family:var(--serif);font-size:1.45rem;line-height:1.25}
+.karte-liste .karte-punkte{flex:1;border-bottom:1px dotted var(--taupe);opacity:.6;min-width:20px}
+.karte-liste .karte-preis{font-family:var(--sans);font-size:1.1rem;color:var(--taupe);white-space:nowrap}
+
 /* Öffnungszeiten */
 .zeiten{max-width:620px;margin-inline:auto;text-align:center}
 .zeiten table{width:100%;border-collapse:collapse;font-size:1.15rem}
